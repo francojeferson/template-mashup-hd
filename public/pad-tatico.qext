@@ -1,0 +1,12 @@
+{
+    "type": "mashup",
+    "name": "Pad Tático",
+    "description": "Mashup para fins de validação",
+    "version": "1.0.0",
+    "author": "Mtrix",
+    "keywords": "qlik-sense, visualization, mashup",
+    "preview": "img/preview.png",
+    "dependencies": {
+        "qlik-sense": ">=3.0.x"
+    }
+}

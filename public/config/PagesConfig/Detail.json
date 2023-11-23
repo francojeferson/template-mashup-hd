@@ -1,0 +1,25 @@
+{
+  "container": [
+    {
+      "name": "",
+      "cards": [
+        {
+          "title": {
+            "id": "ayuN",
+            "tooltip": "text",
+            "hardTitle": "Detalhamento"
+          },
+          "subtitle": {
+            "id": "",
+            "hard": ""
+          },
+          "nativeObject": [
+            {
+              "id": "ayuN"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

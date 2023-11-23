@@ -1,0 +1,89 @@
+@import "./../settings/colors";
+@import "./../settings/fonts";
+
+.bookMark-createContainer {
+  background-color: $dark;
+  border-radius: 6px;
+  color: $neutral-white;
+  margin: 0 10px;
+  padding: 10px;
+  position: relative;
+
+  form {
+    display: flex;
+    flex-direction: column;
+
+    label {
+      display: flex;
+      flex-direction: column;
+      font-weight: 600;
+      margin-bottom: 15px;
+
+      input {
+        background-color: $neutral-100;
+        border: 1px solid #808080;
+        border-radius: 4px;
+        color: $neutral-300;
+        margin-top: 5px;
+        padding: 7px 10px;
+      }
+
+      textarea {
+        background-color: $neutral-100;
+        border: 1px solid #808080;
+        border-radius: 4px;
+        color: $neutral-300;
+        margin-top: 5px !important;
+        max-width: 100%;
+        min-width: 100%;
+        padding: 7px 10px;
+      }
+    }
+  }
+}
+
+.bookMark-loader {
+  bottom: 0;
+  left: 0;
+  opacity: 0.3;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.bookMark-buttonHolder {
+  display: flex;
+}
+
+.bookMark-saveButton,
+.bookMark-cancelButton {
+  background-color: $success-100;
+  border: 1px solid $success-200;
+  border-radius: 4px;
+  color: $dark;
+  display: flex;
+  font-family: $font-family;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  line-height: 16px;
+  margin-right: 5px;
+  padding: 7px 10px;
+  text-transform: uppercase;
+
+  i {
+    margin-right: 4px;
+  }
+}
+
+.bookMark-cancelButton {
+  background-color: $danger-100;
+  border: 1px solid $danger-200;
+  color: $dark;
+
+  i {
+    color: $danger;
+    font-size: 16px;
+  }
+}

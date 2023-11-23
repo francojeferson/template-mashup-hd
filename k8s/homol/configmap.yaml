@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ${CI_PROJECT_NAME}
+  namespace: ${K8S_NAMESPACE}
+data:
+  TZ: America/Sao_Paulo
+  NODE_ENV: "development"
+  APP_NAME: ${CI_PROJECT_NAME}
+  REACT_APP_QVF_ID: "137bfb78-a3a0-44e9-8e5e-0bef17d2915c"
+  REACT_APP_HOST: "qsense.mtrix.com.br"
+  REACT_APP_PREFIX: "/"
+  REACT_APP_PORT: "443"
+  REACT_APP_IS_SECURE: "true"
+  PORT: "5000"
+  REACT_APP_API_KEYCLOAK: https://auth-login-hml.mtrix.com.br
+  REACT_APP_OWNER: https://auth-login-hml.mtrix.com.br
+  REACT_APP_API_TRP: http://localhost:3000
+  REACT_APP_URL_API: https://mdf-infra-approval-api-hml.mtrix.com.br
+  REACT_APP_SHARED: https://shared-components-api-hml.mtrix.com.br

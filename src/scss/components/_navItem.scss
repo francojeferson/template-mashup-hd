@@ -1,0 +1,135 @@
+@import "./../settings/colors";
+@import "./../settings/fonts";
+
+* {
+  box-sizing: border-box;
+}
+
+.navItem {
+  align-items: center;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  font-family: $font-family;
+  font-style: normal;
+  margin: 5px 0;
+  position: relative;
+  width: 212px;
+
+  // &:hover:not(ul) {
+  //     background-color: #0000002d;
+
+  //     span {
+  //         color: $neutral-white;
+  //     }
+  // }
+
+  .navItemNameContainer {
+    align-items: center;
+    display: flex;
+  }
+
+  .active {
+    background-color: $neutral-100;
+    border-radius: 12px;
+
+    div > i {
+      color: $dark;
+    }
+
+    .navItemName {
+      color: $dark;
+    }
+
+    &:hover {
+      .navItemName {
+        color: $primary;
+      }
+    }
+  }
+
+  a {
+    display: flex;
+    height: 50px;
+    padding: 10px;
+    text-decoration: none;
+    width: 100%;
+
+    div > i {
+      color: $neutral-white;
+      font-size: 16px;
+      font-weight: 700;
+      height: 20px;
+      line-height: 16px;
+      margin-right: 8px;
+      text-align: center;
+      width: 20px;
+    }
+  }
+
+  .navItemName {
+    color: $neutral-300;
+    font-size: 14px;
+    line-height: 18px;
+    transition: all 300ms;
+
+    &.is-hidden {
+      opacity: 0;
+    }
+  }
+
+  .fa-angle-up,
+  .fa-angle-down {
+    align-items: center;
+    color: $dark-icons;
+    font-size: 16px;
+    pointer-events: none;
+    position: absolute;
+    right: 12px;
+    top: 19px;
+  }
+
+  .subPagesList {
+    margin-top: 5px;
+    max-height: 0;
+    width: 100%;
+
+    &.showSubPageItems {
+      max-height: 300px;
+      transition: height 0.25s;
+    }
+
+    .subNavItems {
+      align-items: center;
+      border-radius: 12px;
+      display: flex;
+      width: 100%;
+
+      a {
+        margin: 10px 0 0;
+        padding: 8px 16px 8px 43px;
+      }
+
+      .subNavLink {
+        color: $neutral-300;
+        font-size: 13px;
+        height: 32px;
+        line-height: 16px;
+
+        &.subItemActive {
+          color: $neutral-white;
+          font-weight: 700;
+        }
+
+        // &.subItemActive:hover {
+        //     color: $dark;
+        // }
+      }
+
+      // &:hover {
+      //     background-color: $neutral-100;
+      //     font-weight: 700;
+      // }
+    }
+  }
+}

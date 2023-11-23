@@ -1,0 +1,38 @@
+@import "./../settings/colors";
+@import "./../settings/fonts";
+
+.overlay,
+.overlayWrapper {
+  align-items: center;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 10;
+}
+
+.overlay {
+  background-color: $dark;
+  opacity: 0.7;
+}
+
+.overlayContent {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0;
+  z-index: 11;
+}
+
+@media (max-width: 690px) {
+  .overlay,
+  .overlayWrapper {
+    display: flex;
+  }
+
+  .overlayContent {
+    padding: 45px 0 0;
+  }
+}

@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ${CI_PROJECT_NAME}
+  namespace: ${K8S_NAMESPACE}
+  labels:
+    app: ${CI_PROJECT_NAME}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ${CI_PROJECT_NAME}
+  template:
+    metadata:
+      labels:
+        app: ${CI_PROJECT_NAME}
+    spec:
+      containers:
+      - name: ${CI_PROJECT_NAME}
+        securityContext:
+          allowPrivilegeEscalation: false
+          readOnlyRootFilesystem: true
+          runAsNonRoot: true
+          runAsUser: 2000
+        image: ${GCLOUD_REGISTRY}/${CI_PROJECT_NAME}:${IMAGE_VERSION}
+        resources:
+          limits:
+            cpu: "1"
+            memory: "200Mi"
+          requests:
+            cpu: "0.5"
+            memory: "100Mi"
+        volumeMounts:
+        - mountPath: /tmp
+          name: tmp
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
+        envFrom:
+        - configMapRef:
+            name: ${CI_PROJECT_NAME}
+      restartPolicy: Always
+      volumes:
+      - emptyDir: {}
+        name: tmp

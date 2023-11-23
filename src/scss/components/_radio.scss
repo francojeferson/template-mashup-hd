@@ -1,0 +1,77 @@
+.radio-filter-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  font-family: $font-family;
+  justify-content: flex-start;
+  padding: 4px 0;
+}
+
+.radio-filter-input {
+  cursor: pointer;
+  display: none;
+  opacity: 0;
+  position: absolute;
+}
+
+.radio-label {
+  align-items: center;
+  color: $neutral-400;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row-reverse;
+  font-family: $font-family;
+  font-size: 14px;
+  font-stretch: condensed;
+  font-weight: 400;
+  user-select: none;
+
+  @media (max-width: 400px) {
+    margin-top: 30px;
+  }
+}
+
+.checkmark {
+  background-color: #fff;
+  border: 2px solid #58585a;
+  border-radius: 50%;
+  height: 16px;
+  margin-right: 3px;
+  position: relative;
+  width: 16px;
+
+  /* display: flex;
+    justify-content: center;
+    align-items: center; */
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+/* Style the indicator (dot/circle) */
+.radio-label .checkmark::after {
+  background: $neutral-white;
+  border-radius: 50%;
+  content: "";
+  display: none;
+  height: 5px;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: scale(-1) translate(50%, 50%);
+  width: 5px;
+}
+
+/* On mouse-over, add a grey background color */
+// .radio-label:hover input~.checkmark {
+//     opacity: 1.1;
+// }
+
+/* When the radio button is checked, add a blue background */
+.radio-label input:checked ~ .checkmark {
+  background-color: $dark;
+  border: 2px solid $dark;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.radio-label input:checked ~ .checkmark::after {
+  display: block;
+}

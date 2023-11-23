@@ -1,0 +1,20 @@
+@import "./../settings/colors";
+@import "./../settings/fonts";
+
+// This file contains classes that are used by Qlik.
+// We have to stick with them and change whenever we need.
+// NOTE: THIS FILE DOES NOT CORRESPOND TO OUR STYLEGUIDE
+
+.comboLabel {
+  .qv-object-qlik-variable-input .qv-object-header.thin {
+    height: 0 !important;
+  }
+
+  .qlik {
+    display: flex;
+
+    .qui-input.lui-input {
+      align-self: center;
+    }
+  }
+}

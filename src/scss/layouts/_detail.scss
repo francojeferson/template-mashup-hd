@@ -1,0 +1,142 @@
+.combochart-container {
+  display: flex;
+  // overflow-x: auto;
+  overflow: hidden;
+
+  .combochart-left {
+    flex: 1;
+    margin-right: 20px;
+    min-width: 135px;
+    overflow: hidden;
+  }
+
+  .combochart-right {
+    flex: 3;
+    min-width: 60%;
+    overflow: hidden;
+  }
+}
+
+.setName {
+  align-self: flex-start;
+  color: $neutral-500;
+  font-family: $font-family;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.primaryButton.pdv {
+  justify-content: left;
+  min-height: 32px;
+  width: 100%;
+}
+
+.expandedCardContent {
+  .contentWrapper {
+    width: 80%;
+  }
+}
+
+.contentWrapper {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 40%;
+
+  .setName {
+    align-self: center;
+  }
+}
+
+.investments {
+  .toggle {
+    font-family: $font-family-secondary;
+  }
+
+  .childrenWrapper {
+    display: block;
+  }
+
+  .title {
+    color: $neutral-600;
+    font-family: $font-family-secondary;
+    font-weight: 700;
+    margin-right: 5px;
+    word-break: break-word;
+  }
+
+  .chart-container {
+    .title-container {
+      .chart-title {
+        .tooltip-icon {
+          z-index: 1;
+        }
+      }
+    }
+  }
+
+  .kpiValueBold {
+    .sn-kpi .sn-kpi-ellips-text {
+      color: #000;
+      font-size: 18px;
+      font-weight: bold;
+    }
+  }
+
+  .sn-kpi .sn-kpi-data {
+    justify-content: start;
+  }
+
+  // STYLED TABLE PIVOTE
+  .qv-pt .cell.header.top {
+    border: 1.1px solid #a6a6a6 !important;
+  }
+
+  // PRIMEIRO HEADER DA TABELA
+  .qv-pt .cell .left-meta-headers {
+    display: none;
+    font-size: 13px;
+    min-height: 1px;
+    text-align: left;
+  }
+
+  .qv-pt .cell .top-meta-headers {
+    display: none;
+    font-size: 13px;
+    min-height: 1.23076923em;
+    text-align: left;
+  }
+
+  .qv-pt .cell .value {
+    background-color: inherit;
+    border-left: 0.30769231em solid #0000;
+    border-right: 0.61538462em solid #0000;
+    cursor: default;
+    max-height: 4.61538462em;
+    overflow: hidden;
+    padding: 8px 0;
+  }
+}
+
+// media query para 981
+@media (max-width: 981px) {
+  .investments {
+    .radio-filter-container {
+      padding: 16px 0 30px;
+    }
+
+    .charts-container {
+      .chart-container.row {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media (max-width: 1366px) {
+  .investments .combo-header .headerWrapper .titleWrapper .tooltip-icon {
+    margin-right: 10px;
+  }
+}

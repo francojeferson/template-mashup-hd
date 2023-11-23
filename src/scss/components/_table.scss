@@ -1,0 +1,142 @@
+@import "./../settings/colors";
+@import "./../settings/fonts";
+
+.tableWrapper {
+  overflow: auto;
+}
+
+.table {
+  font-family: $font-family;
+  margin: 0 auto;
+  max-width: 750px;
+
+  th {
+    color: $dark-600;
+    min-height: 28px;
+    padding: 3px;
+    position: sticky;
+    top: 0;
+    width: 25vw;
+    z-index: 1;
+  }
+
+  tr {
+    color: $dark-600;
+    vertical-align: middle;
+  }
+
+  td,
+  th {
+    border: 1px solid $dark-600;
+    display: table-cell;
+    height: 30px;
+    max-width: 60px;
+    overflow: hidden;
+    padding-bottom: 6px;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 6px;
+    text-align: right;
+    text-overflow: ellipsis;
+    top: -2px;
+    vertical-align: middle;
+
+    &:first-of-type {
+      left: 0;
+      max-width: unset;
+      padding-left: 8px;
+      text-align: left;
+      z-index: 3;
+    }
+  }
+
+  th:first-of-type {
+    z-index: 4;
+  }
+}
+
+.preco {
+  .tablePreco {
+    thead {
+      th {
+        background-color: $neutral-100;
+      }
+
+      .qv-st-value {
+        color: $neutral-500;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 16px;
+      }
+
+      .qv-st-header-cell-search {
+        border-left-color: $neutral-100;
+
+        i {
+          color: $dark-icons;
+        }
+      }
+    }
+
+    .qv-st-interactive:not(.qv-st-selections-active):not(
+        .qv-st-reordering-active
+      )
+      .qv-st-header:not(.qv-st-custom-header)
+      .qv-st-header-cell-search.qv-st-header-cell-search-open {
+      background-color: darken($neutral-100, 2%) !important;
+    }
+
+    .qv-st-value {
+      font-family: "Public Sans", sans-serif;
+      text-align: left !important;
+    }
+  }
+}
+
+.analisePDVs,
+.modalContent {
+  // remove title from native table
+  .qv-object-wrapper .qv-object .qv-object-header {
+    display: none !important;
+  }
+
+  thead {
+    th:not(
+        .qv-st-header-cell.ng-scope.ui-draggable.ui-draggable-handle.ui-draggable-disabled.qv-st-total-cell
+      ) {
+      background-color: $neutral-100;
+    }
+
+    .qv-st-value {
+      color: $neutral-500;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 16px;
+    }
+
+    .qv-st-header-cell-search {
+      border-left-color: $neutral-100;
+
+      i {
+        color: $dark-icons;
+      }
+    }
+  }
+
+  .qv-st-interactive:not(.qv-st-selections-active):not(.qv-st-reordering-active)
+    .qv-st-header:not(.qv-st-custom-header)
+    .qv-st-header-cell-search.qv-st-header-cell-search-open {
+    background-color: darken($neutral-100, 2%) !important;
+  }
+
+  .qv-st-value {
+    font-family: "Public Sans", sans-serif;
+    text-align: left !important;
+  }
+}
+
+.mapaOportunidades {
+  .scroll-content {
+    overflow: scroll !important;
+  }
+}

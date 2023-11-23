@@ -1,0 +1,68 @@
+@import "./../settings/colors";
+@import "./../settings/fonts";
+
+.bookMark-menu {
+  background: $neutral-white;
+  bottom: 0;
+  box-shadow:
+    -2px 0 4px rgba(99, 123, 123, 0.15),
+    -4px 0 12px rgba(99, 123, 123, 0.15);
+  display: flex;
+  flex-direction: column;
+  font-family: $font-family;
+  overflow: hidden;
+  padding: 0;
+  position: fixed;
+  right: -360px;
+  top: 0;
+  transition: 0.5s ease;
+  width: 360px;
+  z-index: 8;
+
+  &.is-opened {
+    right: 0;
+  }
+}
+
+.bookMark-header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+
+  h1 {
+    color: $dark;
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0;
+  }
+}
+
+.bookMark-createButton {
+  align-items: center;
+  background-color: $primary;
+  border: 0;
+  border-radius: 6px;
+  color: $neutral-white;
+  display: flex;
+  font-size: 10px;
+  font-weight: 800;
+  justify-content: center;
+  margin-right: 5px;
+  padding: 8px 12px;
+  text-transform: uppercase;
+  width: 124px;
+
+  i {
+    // line-height: 1px;
+    margin-right: 5px;
+  }
+}
+
+.bookMark-closeButton {
+  background-color: transparent;
+  border: 0;
+  color: $dark-icons;
+  font-size: 18px;
+  margin-right: 10px;
+}

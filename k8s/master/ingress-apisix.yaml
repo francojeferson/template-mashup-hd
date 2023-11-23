@@ -1,0 +1,27 @@
+apiVersion: apisix.apache.org/v2
+kind: ApisixRoute
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: apisix
+  labels:
+    app: ${CI_PROJECT_NAME}
+  name: ${CI_PROJECT_NAME}
+  namespace: ${K8S_NAMESPACE}
+spec:
+  http:
+  - backends:
+    - serviceName: ${CI_PROJECT_NAME}
+      servicePort: 8080
+    match:
+      hosts:
+      - ${CI_PROJECT_NAME}.${INGRESS_SUFIX}
+      - ${CI_PROJECT_NAME}.apis.core.local
+      paths:
+      - /
+      - /*
+    name: ${CI_PROJECT_NAME}
+    plugins:
+    - config:
+        http_to_https: true
+      enable: true
+      name: redirect

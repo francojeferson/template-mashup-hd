@@ -1,0 +1,81 @@
+options:
+  max-time: 30
+  docker: true
+
+definitions:
+  services:
+    docker:
+      memory: 3072
+    docker-with-large-memory:
+      memory: 7168
+      type: docker
+
+pipelines:
+  default:
+    - step:
+        name: Setup
+        runs-on: [self.hosted, linux]
+        services: [docker]
+        max-time: 3
+        script:
+          - set -x
+          - chmod +x setup.sh
+          - sed -i -e 's/\r$//' setup.sh
+          - ./setup.sh # arquivo obrigatório
+        artifacts:
+          - "*.sh"
+          - Deploy/**
+          - k8s/.settings
+
+    - step:
+        name: Docker Linter
+        image:
+          name: hadolint/hadolint:latest-debian
+        runs-on: [self.hosted, linux]
+        services: [docker]
+        max-time: 3
+        script:
+          - set -x
+          - . ./docker_lint.sh
+
+    - step:
+        name: Kubernetes Linter
+        services: [docker]
+        runs-on: [self.hosted, linux]
+        image: golang:alpine3.18
+        max-time: 5
+        script:
+          - set -x
+          - echo "Iniciando processo KubeLint"
+          - go install golang.stackrox.io/kube-linter/cmd/kube-linter@latest
+          - sh ./kubelint.sh
+
+    - step:
+        name: Docker image Build
+        services: [docker-with-large-memory]
+        runs-on: [self.hosted, linux]
+        size: 2x
+        max-time: 10
+        image:
+          name: us-central1-docker.pkg.dev/prj-c-shared-services-dfbb/docker-images/docker-build-and-push:latest
+          username: $GCLOUD_USERNAME
+          password: $GCLOUD_API_KEYFILE
+        script:
+          - set -x
+          - echo "Iniciando Processo de Build"
+          - . ./docker_build.sh
+
+    - step:
+        name: GKE publishing
+        runs-on: [self.hosted, linux]
+        # runs-on: [bitb.kuberun]
+        max-time: 3
+        trigger: manual
+        image:
+          name: us-central1-docker.pkg.dev/prj-c-shared-services-dfbb/docker-images/gke-publish:latest
+          username: $GCLOUD_USERNAME
+          password: $GCLOUD_API_KEYFILE
+        script:
+          - set -x
+          - echo "Publicando Kubernetes PODs"
+          - . ./gke-deploy.sh

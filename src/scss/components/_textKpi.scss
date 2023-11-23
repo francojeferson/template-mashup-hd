@@ -1,0 +1,45 @@
+@import "../settings/colors";
+@import "../settings/fonts";
+
+.textKpiWrapper {
+  align-items: center;
+  display: flex;
+  flex-flow: column wrap;
+
+  .headerTextKpiWrapper {
+    display: flex;
+    flex-direction: row;
+
+    h4 {
+      align-items: center;
+      color: $neutral-300;
+      display: flex;
+      font-family: $font-family;
+      font-size: 11px;
+      font-style: normal;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      line-height: 16px;
+      margin-right: 10px;
+      text-transform: uppercase;
+    }
+
+    i {
+      color: $neutral-400;
+    }
+  }
+
+  span {
+    font-family: $font-family;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 40px;
+  }
+}
+
+@media (max-width: 980px) {
+  .mixIdeal .textKpiWrapper span {
+    margin-right: 25px;
+  }
+}

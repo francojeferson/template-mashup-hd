@@ -1,0 +1,144 @@
+.combochart-container {
+  display: flex;
+  // overflow-x: auto;
+  overflow: hidden;
+
+  .combochart-left {
+    flex: 1;
+    margin-right: 20px;
+    min-width: 135px;
+    overflow: hidden;
+  }
+
+  .combochart-right {
+    flex: 3;
+    min-width: 60%;
+    overflow: hidden;
+  }
+}
+
+.setName {
+  align-self: flex-start;
+  color: $neutral-500;
+  font-family: $font-family;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.primaryButton.pdv {
+  justify-content: left;
+  min-height: 32px;
+  width: 100%;
+}
+
+.expandedCardContent {
+  .contentWrapper {
+    width: 80%;
+  }
+}
+
+.contentWrapper {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 40%;
+
+  .setName {
+    align-self: center;
+  }
+}
+
+.dashboard {
+  .toggle {
+    font-family: $font-family-secondary;
+  }
+
+  .childrenWrapper {
+    display: block;
+  }
+
+  .title {
+    color: $neutral-600;
+    font-family: $font-family-secondary;
+    font-weight: 700;
+    margin-right: 5px;
+    word-break: break-word;
+  }
+
+  .chart-container {
+    .title-container {
+      .chart-title {
+        .tooltip-icon {
+          z-index: 1;
+        }
+      }
+    }
+  }
+
+  .containerKpiValueBold {
+    width: 100%;
+    height: 85%;
+    display: flex;
+    .sn-kpi .sn-kpi-data {
+      justify-content: start;
+    }
+  }
+
+  .containerKpiValueBoldUnique {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    .sn-kpi .sn-kpi-data {
+      justify-content: center;
+    }
+  }
+
+  .containerKpiValueGrey {
+    width: 100%;
+    height: 85%;
+    display: flex;
+    .sn-kpi .sn-kpi-data {
+      justify-content: end;
+    }
+  }
+
+  .kpiValueBold {
+    .sn-kpi .sn-kpi-ellips-text {
+      font-size: 18px;
+      font-weight: bold;
+    }
+  }
+
+  .kpiValueGrey {
+    .sn-kpi .sn-kpi-ellips-text {
+      font-size: 16px;
+    }
+  }
+
+  .sn-kpi .sn-kpi-data {
+    justify-content: start;
+  }
+}
+
+// media query para 981
+@media (max-width: 981px) {
+  .dashboard {
+    .radio-filter-container {
+      padding: 16px 0 30px;
+    }
+
+    .charts-container {
+      .chart-container.row {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media (max-width: 1366px) {
+  .dashboard .combo-header .headerWrapper .titleWrapper .tooltip-icon {
+    margin-right: 10px;
+  }
+}

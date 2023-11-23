@@ -1,0 +1,62 @@
+.venn svg {
+  inset: 0;
+  overflow: visible;
+  position: absolute;
+}
+
+[data-venn-sets="A"] {
+  path {
+    fill: #5688e4 !important;
+  }
+
+  .label {
+    fill: #0e60ee !important;
+  }
+}
+
+[data-venn-sets="B"] {
+  path {
+    fill: #43f140 !important;
+  }
+
+  .label {
+    fill: #204d20 !important;
+  }
+}
+
+[data-venn-sets="C"] {
+  path {
+    fill: #f35189 !important;
+  }
+
+  .label {
+    fill: #80324d !important;
+  }
+}
+
+.venn-area {
+  .label {
+    font-family: $font-family;
+    font-size: 8px;
+    font-weight: 300;
+  }
+}
+
+.venn-intersection {
+  .label {
+    fill: #ee5a06 !important;
+  }
+}
+
+.svg-container {
+  height: 100%;
+  position: relative;
+
+  svg {
+    height: 100%;
+  }
+}
+
+.overviewExecutivo .nativeFilter .qv-filterpane-column {
+  overflow-y: scroll;
+}

@@ -1,0 +1,35 @@
+apiVersion: apisix.apache.org/v2
+kind: ApisixUpstream
+metadata:
+  name: ${CI_PROJECT_NAME}-upstream
+  namespace: ingress-apisix
+spec:
+  externalNodes:
+  - name: ${CI_PROJECT_NAME}.apis.core.local
+    type: Domain
+  healthCheck:
+    active:
+      concurrency: 10
+      healthy:
+        httpCodes:
+        - 200
+        - 302
+        interval: 1s
+        successes: 2
+      httpPath: /
+      timeout: 1
+      type: http
+      unhealthy:
+        httpCodes:
+        - 429
+        - 404
+        - 500
+        - 501
+        - 502
+        - 503
+        - 504
+        - 505
+        httpFailures: 5
+        interval: 1s
+        tcpFailures: 2
+        timeouts: 3

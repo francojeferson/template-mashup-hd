@@ -1,0 +1,111 @@
+html,
+body,
+body > div,
+.app {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  background-color: $dark;
+}
+
+button {
+  cursor: pointer;
+}
+
+.appWrapper {
+  background-color: $neutral-white;
+  bottom: 0;
+  left: 50px;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: 0.5s ease;
+
+  &.is-right-opened {
+    right: 200px;
+  }
+}
+
+.appContent {
+  background: $background;
+  background-image: url("../../assets/backgrounds/background-desktop.svg");
+  background-size: contain;
+  flex: 1;
+  overflow-x: auto;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 56px);
+  margin-top: 3px;
+  overflow: auto;
+}
+
+@media (max-width: 1024px) {
+  .appWrapper {
+    &.is-right-opened {
+      right: 0;
+    }
+  }
+}
+
+@media (max-width: 690px) {
+  .appWrapper {
+    border-radius: 0;
+    left: 0 !important;
+    top: 0;
+  }
+
+  .app {
+    height: calc(100vh - 49px);
+  }
+}
+/* stylelint-disable */
+.MuiTab-root {
+  color: $neutral-500 !important;
+  font-family: $font-family !important;
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  text-transform: uppercase !important;
+  line-height: 16px !important;
+  letter-spacing: 0.08em !important;
+}
+
+.MuiTab-root.Mui-selected {
+  color: $dark !important;
+}
+
+.MuiTabs-indicator {
+  background-color: #0da9d5 !important;
+}
+
+.column {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar {
+  background-color: transparent;
+  height: 8px;
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba($neutral-600, 0.3);
+  border-radius: 4px;
+}

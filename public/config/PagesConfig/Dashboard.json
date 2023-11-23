@@ -1,0 +1,204 @@
+{
+  "container": [
+    {
+      "name": "Performance entre períodos",
+      "customRadio": {
+        "measure": "%Selecao",
+        "defaultOption": "Sell Out",
+        "options": [
+          {
+            "id": "Sell Out",
+            "name": "Sell-Out"
+          },
+          {
+            "id": "Penetração",
+            "name": "Penetração"
+          },
+          {
+            "id": "Positivação",
+            "name": "Positivação"
+          }
+        ]
+      },
+      "cards": [
+        {
+          "title": {
+            "id": "",
+            "tooltip": "text",
+            "hardTitle": "YTD"
+          },
+          "subtitle": {
+            "id": "",
+            "hard": ""
+          },
+          "nativeObject": {
+            "iconId": "iconYtd",
+            "percentageId": "jkM",
+            "greyValueId": "ppnpSFZ",
+            "valueId": "DxmLhhj"
+          }
+        },
+        {
+          "title": {
+            "id": "",
+            "tooltip": "text",
+            "hardTitle": "MAT"
+          },
+          "subtitle": {
+            "id": "",
+            "hard": ""
+          },
+          "nativeObject": {
+            "iconId": "iconMat",
+            "percentageId": "JjgvUGN",
+            "greyValueId": "SHmR",
+            "valueId": "xajwS"
+          }
+        },
+        {
+          "title": {
+            "id": "",
+            "tooltip": "text",
+            "hardTitle": "MTD Y-1"
+          },
+          "subtitle": {
+            "id": "",
+            "hard": ""
+          },
+          "nativeObject": {
+            "iconId": "iconMtdY1",
+            "percentageId": "utJh",
+            "greyValueId": "ygaNLx",
+            "valueId": "JaQbPkP"
+          }
+        },
+        {
+          "title": {
+            "id": "",
+            "tooltip": "text",
+            "hardTitle": "MTD"
+          },
+          "subtitle": {
+            "id": "",
+            "hard": ""
+          },
+          "nativeObject": {
+            "iconId": "iconMtd",
+            "percentageId": "HJgDc",
+            "greyValueId": "PQQjJ",
+            "valueId": "MvSb"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Comportamento dia a dia no MTD",
+      "cards": [
+        {
+          "title": {
+            "id": "",
+            "tooltip": "text",
+            "hardTitle": "Diferença Acumulada"
+          },
+          "subtitle": {
+            "id": "",
+            "hard": ""
+          },
+          "nativeObject": {
+            "iconId": "iconYtd",
+            "percentageId": "xSEGCdL",
+            "greyValueId": "",
+            "valueId": "MmRLm"
+          }
+        },
+        {
+          "title": {
+            "id": "",
+            "tooltip": "text",
+            "hardTitle": ""
+          },
+          "subtitle": {
+            "id": "",
+            "hard": ""
+          },
+          "nativeObject": {
+            "id": "AZrcP"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Comportamento das vendas no MTD",
+      "customRadio": {
+        "measure": "%TipoVisao",
+        "defaultOption": "Categoria",
+        "options": [
+          {
+            "id": "Categoria",
+            "name": "Categoria"
+          },
+          {
+            "id": "Fornecedor",
+            "name": "Fornecedor"
+          },
+          {
+            "id": "Marca",
+            "name": "Marca"
+          },
+          {
+            "id": "PDV",
+            "name": "PDV"
+          },
+          {
+            "id": "Produtos",
+            "name": "Produtos"
+          }
+        ]
+      },
+      "cards": [
+        {
+          "title": {
+            "id": "",
+            "tooltip": "text",
+            "hardTitle": "Regional"
+          },
+          "subtitle": {
+            "id": "",
+            "hard": ""
+          },
+          "nativeObject": {
+            "id": "pjbcm"
+          }
+        },
+        {
+          "title": {
+            "id": "",
+            "tooltip": "text",
+            "hardTitle": "Distribuidores"
+          },
+          "subtitle": {
+            "id": "",
+            "hard": ""
+          },
+          "nativeObject": {
+            "id": "dDNmJsN"
+          }
+        },
+        {
+          "title": {
+            "id": "",
+            "tooltip": "text",
+            "hardTitle": "Redes"
+          },
+          "subtitle": {
+            "id": "",
+            "hard": ""
+          },
+          "nativeObject": {
+            "id": "dTLJPm"
+          }
+        }
+      ]
+    }
+  ]
+}

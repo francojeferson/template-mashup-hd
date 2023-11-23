@@ -1,0 +1,50 @@
+.selecaoWrapper {
+  background: $neutral-white;
+  border-radius: 8px;
+  box-shadow: 0 0 2px #b0b0b5;
+  flex: 1;
+  height: max-content;
+  justify-content: center;
+  min-width: 100px;
+  padding: 16px;
+
+  .titleWrapper {
+    align-items: center;
+    display: flex;
+
+    .selecaoTitle {
+      color: $neutral-500;
+      font-family: $font-family;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      line-height: 20px;
+      white-space: nowrap;
+    }
+  }
+
+  .selecaoContent {
+    span {
+      color: #38bc9a;
+      font-family: $font-family;
+      font-size: 11px;
+      font-style: normal;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      line-height: 16px;
+    }
+  }
+}
+
+@media (max-width: 981px) {
+  .selecaoWrapper {
+    padding: 8px;
+
+    .titleWrapper {
+      .selecaoTitle {
+        font-size: 11px;
+      }
+    }
+  }
+}

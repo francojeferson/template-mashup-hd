@@ -1,0 +1,33 @@
+# Cluster de produção onde será feito o deploy.
+# Valor default: production
+# Valores válidos: production ou perimeter
+# Caso haja mudanças após implantado, deve abrir chamado solicantando a remoção das configurações antigas
+CLUSTER=production
+
+# K8s namespace de onde será feito o deploy em ambiente de desenvolvimento.
+# Valor default: dev
+# Os valores de DESEN_K8S_NAMESPACE e HOMOL_K8S_NAMESPACE não podem ser iguais
+# Caso haja mudanças após implantado, deve abrir chamado solicantando a remoção das configurações antigas
+DESEN_K8S_NAMESPACE=dev
+
+# K8s namespace de onde será feito o deploy em ambiente de homologacao.
+# Valor default: hml
+# Os valores de DESEN_K8S_NAMESPACE e HOMOL_K8S_NAMESPACE não podem ser iguais
+# Caso haja mudanças após implantado, deve abrir chamado solicantando a remoção das configurações antigas
+HOMOL_K8S_NAMESPACE=hml
+
+# K8s namespace de onde será feito o deploy em ambiente de produção.
+# Valor default: prd
+# Caso haja mudanças após implantado, deve abrir chamado solicantando a remoção das configurações antigas
+PRD_K8S_NAMESPACE=prd
+
+# URL da aplicação. Regras pra URLs: sem espaços, letras mininusculas, hifens para separar palavras,  caracteres especiais
+# Valor default: ${CI_PROJECT_NAME} nome do repositório
+# IMPORTANT: Caso haja mudanças após implantado, deve abrir chamado solicantando a remoção das configurações antigas
+K8S_HOST=${CI_PROJECT_NAME}
+
+# PERIMETER é a variável que define se o ingress será publicado fora da VPN
+# valor default: false
+# para expor o serviço para a internet, altere para true
+# Solicitar para o time de IT OPERATIONS a inclusão no DNS externo
+PERIMETER=true

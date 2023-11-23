@@ -1,0 +1,20 @@
+apiVersion: apisix.apache.org/v2
+kind: ApisixRoute
+metadata:
+  name: ${CI_PROJECT_NAME}
+  namespace: ingress-apisix
+spec:
+  http:
+  - match:
+      hosts:
+      - ${CI_PROJECT_NAME}${SEPARATOR}${INGRESS_SUFIX}
+      paths:
+      - /*
+    name: rule1
+    plugins:
+    - config:
+        host: ${CI_PROJECT_NAME}.apis.core.local
+      enable: true
+      name: proxy-rewrite
+    upstreams:
+    - name: ${CI_PROJECT_NAME}-upstream

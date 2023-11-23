@@ -1,0 +1,72 @@
+{
+  "langVar": "%_IDIOMA",
+  "filters": {
+    "all": [
+      {
+        "id": "KwZruX"
+      },
+      {
+        "id": "qmskTc"
+      },
+      {
+        "id": "KWVR"
+      },
+      {
+        "id": "JFgNwuL"
+      },
+      {
+        "id": "AtKux"
+      },
+      {
+        "id": "fhKmCj"
+      },
+      {
+        "id": "DjmsNp"
+      },
+      {
+        "id": "SnHwrP"
+      },
+      {
+        "id": "CaRRRZ"
+      }
+    ],
+    "main": [
+      {
+        "label": "Fabricante",
+        "id": "KwZruX"
+      },
+      {
+        "label": "Categoria",
+        "id": "qmskTc"
+      },
+      {
+        "label": "Marca",
+        "id": "KWVR"
+      },
+      {
+        "label": "Produto",
+        "id": "JFgNwuL"
+      },
+      {
+        "label": "Produto Desc.",
+        "id": "AtKux"
+      },
+      {
+        "label": "UF PDV",
+        "id": "fhKmCj"
+      },
+      {
+        "label": "Cidade PDV",
+        "id": "DjmsNp"
+      },
+      {
+        "label": "Cód. Vendedor",
+        "id": "SnHwrP"
+      },
+      {
+        "label": "Vendedor",
+        "id": "CaRRRZ"
+      }
+    ]
+  }
+}

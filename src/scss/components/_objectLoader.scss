@@ -1,0 +1,28 @@
+.objectLoader {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  width: 100%;
+
+  svg {
+    height: "30%";
+    max-height: 24px;
+    max-width: 32px;
+    width: "30%";
+  }
+
+  path {
+    animation: 1s linear 0s infinite alternate fillcolor;
+  }
+
+  @keyframes fillcolor {
+    from {
+      fill: transparent;
+    }
+
+    to {
+      fill: "#4b848e";
+    }
+  }
+}

@@ -1,0 +1,88 @@
+@import "./../settings/colors";
+@import "./../settings/fonts";
+
+.tableMaster {
+  width: 100%;
+
+  &.mobile {
+    height: 100%;
+
+    thead,
+    tbody {
+      height: 100%;
+    }
+
+    th {
+      left: 0;
+      padding-right: 24px;
+      vertical-align: middle;
+    }
+
+    td {
+      padding: 20px 10px;
+      vertical-align: middle;
+
+      .nativeFilter {
+        height: max-content;
+      }
+    }
+  }
+
+  thead,
+  th {
+    background-color: $neutral-white;
+    color: $neutral-400;
+    font-family: "Public Sans";
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 16px;
+    position: sticky;
+    text-align: center;
+    text-transform: uppercase;
+    top: 0;
+    z-index: 2;
+
+    &:first-child,
+    &:last-child {
+      text-align: left;
+    }
+
+    td {
+      text-align: center;
+
+      &:first-child,
+      &:last-child {
+        text-align: left;
+      }
+    }
+  }
+
+  tr {
+    td {
+      font-family: "Public Sans";
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 20px;
+      min-width: 30px;
+      padding: 20px 0;
+      text-align: left;
+      vertical-align: middle;
+
+      &:first-child {
+        color: $neutral-600;
+      }
+
+      &:nth-child(2),
+      &:nth-child(3) {
+        text-align: center;
+      }
+    }
+  }
+}
+
+.tableMasterWrapper {
+  flex: 1;
+  overflow-y: scroll;
+}

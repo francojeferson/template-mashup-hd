@@ -1,0 +1,105 @@
+@import "./../settings/colors";
+@import "./../settings/fonts";
+
+.bookMark-list {
+  background: $neutral-white;
+  padding: 10px;
+}
+
+.bookMark-itemList {
+  border-top: 1px solid #d2dcdd;
+  display: flex;
+  padding: 8px 5px;
+
+  &:hover {
+    background: $neutral-100;
+
+    .bookMark-infoButton {
+      color: $dark-icons;
+    }
+  }
+
+  .bookMark-itemTitle {
+    align-items: baseline;
+    display: block;
+    flex: 1;
+  }
+}
+
+.bookMark-infoContainerHolder {
+  position: relative;
+
+  > span {
+    color: $neutral-500;
+    margin-right: 5px;
+  }
+}
+
+.bookMark-infoButton {
+  background-color: transparent;
+  border: 0;
+  color: $neutral-300;
+}
+
+.bookMark-topTitle {
+  color: $dark;
+  display: flex;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 16px;
+  margin-bottom: 10px;
+
+  span {
+    margin-right: 5px;
+  }
+
+  div {
+    align-items: center;
+    background-color: $danger;
+    border-radius: 100px;
+    color: $neutral-white;
+    display: flex;
+    font-size: 11px;
+    font-weight: 600;
+    height: 15px;
+    justify-content: center;
+    line-height: 9px;
+    width: 15px;
+  }
+}
+
+.bookMark-search {
+  background-color: $neutral-100;
+  border: 0;
+  border-radius: 6px;
+  color: $dark;
+  margin-bottom: 10px;
+  padding: 7px 10px;
+  width: 100%;
+}
+
+.bookMark-applyButton {
+  background: transparent;
+  border: 0;
+  color: $dark;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  line-height: 16px;
+  text-transform: uppercase;
+}
+
+.closeEditMode {
+  background-color: transparent;
+  border: 0;
+  bottom: 0;
+  color: transparent;
+  cursor: auto;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 4;
+}

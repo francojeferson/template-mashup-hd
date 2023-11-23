@@ -1,0 +1,301 @@
+{
+  "menu": [
+    {
+      "title": "Overview Executivo"
+    },
+    {
+      "title": "Alavancas de Execução",
+      "children": [
+        {
+          "title": "Positivação"
+        },
+        {
+          "title": "Preço"
+        },
+        {
+          "title": "Mix Ideal"
+        }
+      ]
+    },
+    {
+      "title": "Mapa de Oportunidades"
+    }
+  ],
+  "general": {
+    "excelExport": "EXPORTAR PARA EXCEL",
+    "pdvList": "VER LISTA PDV",
+    "cardExpanded": "REDUZIR",
+    "cardCollapsed": "EXPANDIR",
+    "needFilter": "Filtro necessário",
+    "filterMessage": "Todos os filtros",
+    "filterMessageClose": "Fechar"
+  },
+  "overviewExecutivo": {
+    "cards": [
+      {
+        "tooltip": "text",
+        "customRadio": {
+          "defaultOption": "Reais",
+          "options": [
+            {
+              "name": "Reais"
+            },
+            {
+              "name": "Unidades"
+            }
+          ]
+        },
+        "legends": [
+          {
+            "name": "Estoque R$"
+          },
+          {
+            "name": "Sellout R$"
+          }
+        ]
+      },
+      {
+        "subtitle": {
+          "hard": "PDVs que possuem os produtos dos conjuntos"
+        },
+        "tooltip": "Visão acumulada e temporal com performance de sell out e estoque",
+        "customRadio": {
+          "options": [
+            {
+              "name": "Com Compras"
+            },
+            {
+              "name": "Sem Compras"
+            }
+          ]
+        },
+        "modal": {
+          "title": "ANÁLISE PDVs",
+          "tabs": [
+            {
+              "label": "Conjunto A"
+            },
+            {
+              "label": "Conjunto A+B"
+            },
+            {
+              "label": "Conjunto B"
+            }
+          ]
+        }
+      },
+      {
+        "waterfall": {
+          "tooltip": "Demonstra itens que contribuem e/ou detratam a performance"
+        },
+        "barcharts1": {
+          "hardTitle": "Variação individual de SellOut",
+          "tooltip": "Demonstração de representativdade e de crescimento dos itens em sellout"
+        },
+        "barcharts2": {
+          "hardTitle": "Variação de estoque",
+          "tooltip": "Demonstração de representativdade e de crescimento dos itens em estoque"
+        }
+      }
+    ]
+  },
+  "positivacao": {
+    "cards": [
+      {
+        "tooltip": "Impacto das alavancas de execução no Sell-Out",
+        "sections": [
+          {},
+          {
+            "title": {
+              "hard": "Impacto Positivação"
+            }
+          }
+        ]
+      },
+      {
+        "legends": {
+          "name": ["Preço", "Positivação"]
+        },
+        "tooltip": ["Causa Raíz", "Alavancas vs Positivação - Últimos 15 meses"]
+      }
+    ]
+  },
+  "preco": {
+    "cards": [
+      {
+        "tooltip": "Impacto das alavancas de execução no Sell-Out",
+        "sections": [
+          {},
+          {
+            "title": "Impacto Preço"
+          }
+        ],
+        "mobile": {
+          "tabs": [
+            {
+              "title": "Contribuição por SKU"
+            },
+            {
+              "title": "Variação do KPI"
+            }
+          ]
+        }
+      },
+      {
+        "tooltip": "Causa raíz tooltip",
+        "sections": [
+          {
+            "tabs": [
+              {
+                "title": "Gráfico correlação"
+              },
+              {
+                "title": "Lista desconto e elasticidade"
+              }
+            ]
+          },
+          {
+            "SKUTable": {
+              "filter": {
+                "message": "Selecione SKUs para formar a tabela"
+              }
+            }
+          }
+        ],
+        "mobile": {
+          "SKUTableMobile": {
+            "filter": {
+              "message": "Selecione SKUs para formar a tabela"
+            }
+          }
+        }
+      }
+    ]
+  },
+  "mixIdeal": {
+    "needFilterMessage": "Para exibir os dados, selecione uma categoria",
+    "cards": [
+      {
+        "tooltip": "tooltip card1 mix ideal",
+        "sections": [
+          {
+            "simulator": [
+              {
+                "subtitle": "Valores precisam somar 100%",
+                "tooltip": "KPIs Internos %"
+              },
+              {
+                "subtitle": "Valores precisam somar 100%",
+                "tooltip": "KPIs Externos %"
+              },
+              {
+                "subtitle": "Valores precisam somar 100%",
+                "tooltip": "KPIs Externos %"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tooltip": "tooltip card 2 mix ideal",
+        "sections": [
+          {
+            "kpis": [
+              {
+                "tooltip": "kpi mix tooltip 1"
+              },
+              {
+                "tooltip": "kpi mix tooltip2"
+              }
+            ]
+          },
+          {
+            "SKUs": {
+              "title": "Filtrar SKUs",
+              "card": {
+                "title": "Seleção de SKUs",
+                "tooltip": "card selecao skus tooltip"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "mapa": {
+    "cards": [
+      {
+        "tooltip": "tooltip card 1 mapa pt_BR",
+        "customRadio": {
+          "name": ["Crescimento", "Variação Absoluta"]
+        },
+        "comboHeader": ["Crescimento % Sell-Out", "Variação Absoluta Sell-Out"]
+      },
+      {
+        "tooltip": "tooltip card 2 mapa",
+        "comboLeft": {
+          "title": {
+            "hard": "Relação do Resultado com o SellOut"
+          },
+          "header": {
+            "name": ["Crescimento % SO", "Nº de PDVs"]
+          }
+        },
+        "rightChart": {
+          "title": {
+            "hard": "Relação do resultado com a Positivação"
+          },
+          "legends": {
+            "name": ["Nº de PDVs", "PDVs Perdidos", "PDVs Novos"]
+          }
+        }
+      },
+      {
+        "modais": [
+          {
+            "button": "VER LISTA DE PDVS POR FAIXA",
+            "title": "PDVs por Quartil",
+            "tabs": [
+              {
+                "label": "PDVS FAIXA 0-25"
+              },
+              {
+                "label": "PDVS FAIXA 26-50"
+              },
+              {
+                "label": "PDVS FAIXA 51-75"
+              },
+              {
+                "label": "PDVS FAIXA 76-100"
+              }
+            ]
+          },
+          {
+            "button": "VER LISTA DE PDVS PERDIDOS",
+            "title": "PDVs Perdidos",
+            "tabs": [
+              {
+                "label": "PDVS PERDIDOS"
+              },
+              {
+                "label": "PDVS NOVOS"
+              }
+            ]
+          },
+          {
+            "button": "VER LISTA DE PDVS NOVOS",
+            "title": "PDVs Novos",
+            "tabs": [
+              {
+                "label": "PDVS PERDIDOS"
+              },
+              {
+                "label": "PDVS NOVOS"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

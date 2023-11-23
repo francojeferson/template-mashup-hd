@@ -1,0 +1,86 @@
+@font-face {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 400;
+  src: url("../../assets/fonts/IBMPlexSans-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 500;
+  src: url("../../assets/fonts/IBMPlexSans-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 600;
+  src: url("../../assets/fonts/IBMPlexSans-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 700;
+  src: url("../../assets/fonts/IBMPlexSans-Bold.ttf") format("truetype");
+}
+
+///////////
+
+@font-face {
+  font-family: "Public Sans", sans-serif;
+  font-weight: 400;
+  src: url("../../assets/fonts/PublicSans-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Public Sans", sans-serif;
+  font-weight: 500;
+  src: url("../../assets/fonts/PublicSans-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Public Sans", sans-serif;
+  font-weight: 600;
+  src: url("../../assets/fonts/PublicSans-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Public Sans", sans-serif;
+  font-weight: 700;
+  src: url("../../assets/fonts/PublicSans-Bold.ttf") format("truetype");
+}
+
+$font-family: "Public Sans";
+$font-family-secondary: "IBM Plex Sans";
+
+h2 {
+  font-family: $font-family;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 24px;
+  text-align: left;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-family;
+}
+
+p {
+  font-family: $font-family;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 20px;
+  text-align: left;
+}
+
+button,
+span {
+  font-family: $font-family;
+}

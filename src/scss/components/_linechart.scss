@@ -1,0 +1,15 @@
+.lineChartWrapper {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  width: 100%;
+}
+
+@media (max-width: 981px) {
+  .lineChartWrapper {
+    .legend {
+      margin-bottom: 14px;
+    }
+  }
+}

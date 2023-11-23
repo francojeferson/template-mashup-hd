@@ -1,0 +1,174 @@
+@import "./../settings/colors";
+@import "./../settings/fonts";
+
+.filterMenuMobile {
+  align-items: center;
+  background: $neutral-white;
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+
+  i {
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 300;
+    height: 18px;
+    line-height: 18px;
+    width: 21px;
+  }
+
+  :-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.favoriteButton {
+  background-color: transparent;
+  border: 0;
+  color: $dark-icons;
+  padding: 0 10px;
+}
+
+.exportButtonMobile {
+  align-items: center;
+  background-color: $neutral-white;
+  border: 1px solid $neutral-white;
+  border-radius: 6px;
+  display: flex;
+  padding: 8px 12px;
+
+  i {
+    color: $dark-icons;
+    font-size: 16px;
+  }
+}
+
+.buttonFilterMobile {
+  align-items: center;
+  background: none;
+  border: 0;
+  display: flex;
+  padding: 8px;
+  position: relative;
+  width: 100%;
+
+  i {
+    color: $dark-icons;
+    font-size: 16px;
+    margin-right: 6px;
+  }
+
+  span {
+    color: $dark;
+    font-family: $font-family;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 16px;
+  }
+}
+
+.dotMobile {
+  align-items: center;
+  background-color: #e95248;
+  border-radius: 50%;
+  display: flex;
+  height: 16px;
+  justify-content: center;
+  margin-left: 6px;
+  margin-right: 4px;
+  position: absolute;
+  right: 0;
+  top: 2px;
+  width: 16px;
+
+  span {
+    color: #fff !important;
+    font-size: 11px !important;
+    font-style: normal;
+    font-weight: 600;
+    text-align: center;
+  }
+}
+
+.filterSelection {
+  align-items: center;
+  display: flex;
+}
+
+.filterButtonActions {
+  border-right: 1px solid $neutral-200;
+  display: flex;
+
+  button {
+    background: none;
+    border: 0;
+    margin-right: 16px;
+    transition: all 300ms ease;
+  }
+
+  i {
+    color: $neutral-300;
+    font-size: 16px;
+  }
+
+  .disabled {
+    opacity: 0.4;
+    pointer-events: none;
+  }
+}
+
+.closeFilter {
+  span {
+    color: $dark-icons;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-align: right;
+    text-transform: uppercase;
+  }
+}
+
+.mainFilterList {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.calendarFilter {
+  align-items: center;
+  background: $neutral-white;
+  border: 1px solid $neutral-200;
+  border-radius: 6px;
+  display: flex;
+  height: 35px;
+  justify-content: center;
+  width: 137px;
+
+  span {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: normal;
+    margin-left: 6px;
+  }
+}
+
+.removeAllFiltersIcon {
+  background-image: url("../../assets/icons/removeAllFilters.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 36px;
+  width: 36px;
+}
+
+@media (max-width: 690px) {
+  .filterMenu {
+    overflow: hidden;
+    padding: 0;
+  }
+}
+@media (min-width: 690px) {
+  .filterMenu > .overlayWrapper {
+    display: none;
+  }
+}

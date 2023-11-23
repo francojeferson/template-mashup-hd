@@ -1,0 +1,84 @@
+// MOBILE HEADER
+
+@import "./../settings/colors";
+
+.mobileTabsHeader {
+  background-color: $neutral-white;
+  box-shadow: 0 -5px 15px 0 $neutral-500;
+  margin-bottom: 1rem;
+  position: sticky;
+  top: -2px;
+  z-index: 2;
+}
+
+.burgerContainer {
+  align-items: center;
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+}
+
+.mobileHeader {
+  align-items: center;
+  box-shadow: 0 12px 24px -4px #929eab1f;
+  display: none;
+  flex-direction: row;
+  height: 48px;
+  justify-content: space-between;
+  padding: 0 16px;
+}
+
+.burger-button {
+  background: none;
+  border: 0;
+  color: $dark-icons;
+  font-size: 16px;
+  height: max-content;
+  margin-right: 9px;
+  width: max-content;
+}
+
+.burger-title {
+  color: $dark;
+  font-size: 18px;
+  font-weight: bold;
+  margin-left: 14px;
+  text-transform: capitalize;
+}
+
+.buttonsContainer {
+  align-items: center;
+  background: none;
+  border: 0;
+  display: flex;
+  font-size: 16px;
+  height: max-content;
+  justify-content: center;
+}
+
+.button-action {
+  background: none;
+  border: 0;
+  color: $dark-icons;
+  font-size: 16px;
+  height: max-content;
+  margin-left: 14px;
+  max-width: 18px;
+  width: max-content;
+}
+
+.dot--primary {
+  height: 14px;
+  position: absolute;
+  right: 36px;
+  top: 10px;
+  width: 14px;
+}
+
+@media (max-width: 690px) {
+  .mobileHeader {
+    background: $neutral-white;
+    box-shadow: unset;
+    display: flex;
+  }
+}

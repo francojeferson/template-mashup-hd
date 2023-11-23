@@ -1,0 +1,74 @@
+.charts-container {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+
+  .chart-container {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    max-height: 500px;
+    min-width: 210px;
+
+    .title-container {
+      align-items: center;
+      display: flex;
+      margin-bottom: 15px;
+      width: 100%;
+
+      .chart-title {
+        align-items: center;
+        color: $neutral-600;
+        display: flex;
+        font-family: $font-family-secondary;
+        font-size: 20px;
+        font-weight: 700;
+        letter-spacing: -0.01em;
+        line-height: 28px;
+        width: 100%;
+
+        > div {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+
+        &.paddingLeft {
+          padding-left: 52px;
+        }
+      }
+    }
+
+    &.no-title {
+      margin-top: 43px;
+    }
+
+    &.row {
+      display: flex;
+      flex-direction: row;
+    }
+
+    @media (max-width: 768px) {
+      align-items: center;
+      justify-content: center;
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+  }
+
+  .tabPanelWrapper {
+    @media (max-width: 980px) {
+      width: 100%;
+    }
+    margin-top: 16px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 1366px) {
+  .charts-container .chart-container .title-container .chart-title {
+    font-size: 18px;
+  }
+}

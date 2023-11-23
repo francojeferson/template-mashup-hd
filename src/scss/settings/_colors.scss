@@ -1,0 +1,56 @@
+// Color definitions
+/*
+    All colors used inside a project. Any new color must be placed inside this file.
+
+    These are defined from the Starter Kit template's Figma prototype and documentation.
+    If you find any inconsistancy, ask help for Cluster's design team.
+
+*/
+
+// BACKGROUND
+$background: #ebf3fb;
+
+// DARK
+$dark: #254d74;
+$dark-100: #d9e5e7;
+$dark-600: #184952;
+$dark-icons: #0190d2;
+$darker: #0b333a;
+$darker-solid: #153556;
+
+// NEUTRAL
+$neutral-white: #fff;
+$neutral-100: #f2f4fd;
+$neutral-150: #fbfbfc;
+$neutral-200: #d6d6d9;
+$neutral-300: #a2a2a7;
+$neutral-400: #8a8a8a;
+$neutral-500: #666;
+$neutral-600: #262626;
+$neutral-icons: #e7f7fb;
+
+// PRIMARY
+$primary: #0190d2;
+$primary-100: #f7e5c5;
+$primary-200: #f0ca8c;
+
+// SUCCESS
+$success: #88d7c2;
+$success-100: #c3ebe1;
+$success-200: #88d7c2;
+$success-darker: #30a083;
+
+// DANGER
+$danger: #e95248;
+$danger-100: #fbdcda;
+$danger-200: #f6bab6;
+
+// WARNING
+$warning: #fdb949;
+$warning-100: #feeac8;
+$warning-200: #fed592;
+
+//Dots Color
+$dot1-color: $primary;
+$dot2-color: $success;
+$dot3-color: $warning;

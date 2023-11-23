@@ -1,0 +1,51 @@
+.customFilterContainer {
+  background: rgb(252, 252, 252);
+  border: solid 2px rgb(240, 13, 13);
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+}
+
+.customFilterButton {
+  border: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+}
+
+.customFilterList {
+  background: #ffff;
+  display: none;
+  flex-direction: column;
+  max-height: 250px;
+  overflow: scroll;
+  width: 100%;
+}
+
+.show {
+  display: flex;
+}
+
+.customFilterItem {
+  align-items: center;
+  background: transparent;
+  border: 0;
+  border-bottom: solid 1px rgb(128, 128, 128);
+  color: rgb(15, 15, 15);
+  display: flex;
+  padding-left: 10px;
+
+  div {
+    border: solid 3px rgb(136, 136, 136);
+    border-radius: 7.5px;
+    height: 15px;
+    margin-right: 10px;
+    width: 15px;
+  }
+}
+
+.customFilterItem.active {
+  div {
+    background-color: #f00;
+  }
+}

@@ -1,0 +1,123 @@
+.search-wrapper {
+  align-items: center;
+  background: $neutral-100;
+  border: 1px solid $neutral-100;
+  border-radius: 6px;
+  display: flex;
+  height: 32px;
+  justify-content: space-between;
+  margin: 0 16px;
+  padding: 8px 12px;
+  transition: all 300ms ease;
+  width: 190px;
+}
+
+.search-wrapper:focus-within {
+  border: 1px solid $primary;
+}
+
+.search-wrapper.opened {
+  width: 380px;
+}
+
+.search-wrapper .input-wrapper {
+  align-items: center;
+  display: flex;
+  flex: 1;
+}
+
+.search-wrapper i {
+  color: $dark-icons;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.search-wrapper .suggestion-list {
+  background: $dark;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  display: flex;
+  font-size: 15px;
+  overflow: auto;
+  width: 100%;
+}
+
+.search-wrapper input {
+  background: transparent;
+  border: 0;
+  flex: 1;
+  font-family: $font-family !important;
+  font-size: 14px;
+  margin-left: 6px;
+}
+
+.search-wrapper .suggestions-wrapper {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  box-shadow: 1px 1px 10px -3px #5d5d5d;
+  left: 0;
+  margin-top: 30px;
+  position: absolute;
+  right: 0;
+  top: 30px;
+  width: 100%;
+  z-index: 99;
+}
+
+.suggestion-list .suggestion-item {
+  background: $dark;
+  box-shadow: inset -1px 0 0 $dark-600;
+  color: #97aeb2;
+  cursor: pointer;
+  padding: 8px 12px;
+  transition: all 300ms ease;
+  white-space: nowrap;
+}
+
+.suggestion-list .suggestion-item:hover {
+  background: $dark;
+  color: $neutral-white;
+}
+
+.associations-list .association-item {
+  box-shadow: inset 0 -1px 0 $neutral-200;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  font-size: 15px;
+  min-height: 54px;
+  padding: 12px;
+  transition: all 200ms ease;
+}
+
+.associations-list .association-item:hover {
+  background: $neutral-100;
+}
+
+.associations-list .association-item .association-field {
+  color: $neutral-500;
+  font-weight: bold;
+}
+
+.associations-list .association-item .association-value {
+  color: $neutral-500;
+}
+
+.associations-list {
+  background: $neutral-white;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  max-height: 320px;
+  overflow: auto;
+}
+@media (max-width: 690px) {
+  .search-wrapper {
+    border-radius: 0;
+    margin: 0;
+    width: 100%;
+  }
+
+  .search-wrapper.opened {
+    width: 100%;
+  }
+}

@@ -1,0 +1,44 @@
+.simpleKpiWrapper {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  h2 {
+    color: $dark;
+    font-size: 14px;
+    font-weight: 400;
+  }
+}
+
+.simpleKpiMainValue {
+  font-family: $font-family;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 800;
+  letter-spacing: 0;
+}
+
+.simpleKpiValuesWrapper {
+  align-items: center;
+  display: flex;
+}
+
+.simpleKpiSecondWrapper {
+  margin-left: 12px;
+  margin-top: 4px;
+
+  p {
+    color: $neutral-500;
+  }
+}
+
+.simpleKpiSecondValue {
+  color: $neutral-500;
+  font-family: $font-family;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-align: left;
+}

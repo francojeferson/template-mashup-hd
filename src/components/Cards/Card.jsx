@@ -1,10 +1,10 @@
 import PropTypes from "prop-types";
 import { useEffect, useRef, useState } from "react";
 import ReactDom from "react-dom";
-import { useTranslation } from "react-i18next";
 import styled from "styled-components";
 import ComboHeader from "../ComboHeader/ComboHeader";
 import CircleLoader from "../Loaders/CircleLoader";
+import TooltipInfo from "../TooltipInfo/TooltipInfo";
 
 const ButtonWrapper = styled("div")({
   button: {
@@ -55,12 +55,14 @@ function Card({
   exportTable,
   exportTableId,
   exportContainer,
+  modalDetail,
+  onClickModal,
+  tooltip,
+  tooltipKpi,
 }) {
   const [isExpanded, setExpand] = useState(false);
-  const [loadingExcel, setLoadingExcel] = useState(false);
-
   const mounted = useRef();
-  const { t } = useTranslation();
+  const [loadingExcel, setLoadingExcel] = useState(false);
 
   useEffect(() => {
     mounted.current = true;
@@ -106,6 +108,122 @@ function Card({
     }
   };
 
+  const actionsButton = () => {
+    if (exportTable && expandable) {
+      return (
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "space-between",
+          }}
+        >
+          <ButtonWrapper>
+            <button type="button" onClick={() => exportToXLS(exportTableId)}>
+              {!loadingExcel ? (
+                <i className="far fa-file-export" />
+              ) : (
+                <LoaderWrapper>
+                  <CircleLoader />
+                </LoaderWrapper>
+              )}
+            </button>
+          </ButtonWrapper>
+          <div
+            className={
+              absoluteExpandButton
+                ? "primaryButton expandButton absolute"
+                : "primaryButton expandButton"
+            }
+          >
+            <button type="button" onClick={() => handleExpand()}>
+              <i className="fal fa-expand" />
+            </button>
+          </div>
+        </div>
+      );
+    }
+    if (expandable) {
+      return (
+        <div
+          className={
+            absoluteExpandButton
+              ? "primaryButton expandButton absolute"
+              : "primaryButton expandButton"
+          }
+        >
+          <button type="button" onClick={() => handleExpand()}>
+            <i className="fal fa-expand" />
+          </button>
+        </div>
+      );
+    }
+    if (exportTable && modalDetail) {
+      return (
+        <>
+          <ButtonWrapper>
+            <div aria-hidden="true" onClick={onClickModal}>
+              <button style={{ height: "34px" }} type="button">
+                <div
+                  className="row"
+                  style={{
+                    alignItems: "center",
+                    justifyContent: "space-between",
+                  }}
+                >
+                  {tooltip && (
+                    <TooltipInfo
+                      text={tooltip}
+                      style={{ marginRight: "8px" }}
+                    />
+                  )}
+                </div>
+              </button>
+            </div>
+          </ButtonWrapper>
+          <ButtonWrapper>
+            <button type="button" onClick={() => exportToXLS(exportTableId)}>
+              {!loadingExcel ? (
+                <i className="far fa-file-export" />
+              ) : (
+                <LoaderWrapper>
+                  <CircleLoader />
+                </LoaderWrapper>
+              )}
+            </button>
+          </ButtonWrapper>
+        </>
+      );
+    }
+    if (exportTable) {
+      return (
+        <ButtonWrapper>
+          <button type="button" onClick={() => exportToXLS(exportTableId)}>
+            {!loadingExcel ? (
+              <i className="far fa-file-export" />
+            ) : (
+              <LoaderWrapper>
+                <CircleLoader />
+              </LoaderWrapper>
+            )}
+          </button>
+        </ButtonWrapper>
+      );
+    }
+  };
+
+  // useEffect(async () => {
+  //   await app.visualization
+  //     .get(tableId)
+  //     .then((vis) => {
+  //       vis.table.exportData({ format: "CSV_C" }).then((link) => {
+  //         setLoadingExcel(false);
+  //         window.open(link);
+  //       });
+  //     })
+  //     .catch(() => setLoadingExcel(false));
+  // }, [tableId]);
+
   const Content = () => (
     <div
       className={isExpanded ? "expandedCardContainer" : `${className} card`}
@@ -119,9 +237,20 @@ function Card({
           className="cardHeader"
           style={{
             justifyContent: header ? "space-between" : "flex-end",
-            alignItems: "center",
+            marginBottom: "2px",
           }}
         >
+          {tooltipKpi && (
+            <TooltipInfo
+              text={tooltipKpi}
+              style={{
+                marginLeft: "8px",
+                position: "relative",
+                marginTop: "-16px",
+                marginRight: "-16px",
+              }}
+            />
+          )}
           {header && (
             <ComboHeader
               app={app}
@@ -142,50 +271,7 @@ function Card({
             />
           )}
 
-          {exportTable && (
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "row",
-                justifyContent: "space-between",
-              }}
-            >
-              <ButtonWrapper>
-                <button
-                  type="button"
-                  onClick={() => exportToXLS(exportTableId)}
-                >
-                  <span>EXPORTAR PARA EXCEL</span>
-                  {!loadingExcel ? (
-                    <i className="far fa-file-export" />
-                  ) : (
-                    <LoaderWrapper>
-                      <CircleLoader />
-                    </LoaderWrapper>
-                  )}
-                </button>
-              </ButtonWrapper>
-            </div>
-          )}
-
-          {/* {expandable && (
-           <div
-              className={
-                absoluteExpandButton
-                  ? "primaryButton expandButton absolute"
-                  : "primaryButton expandButton"
-              }
-            >
-              <button type="button" onClick={() => handleExpand()}>
-                <span>
-                  {isExpanded
-                    ? t("general.cardExpanded")
-                    : t("general.cardCollapsed")}
-                </span>
-                <i className="fal fa-expand" />
-              </button>
-            </div>
-          )} */}
+          {actionsButton()}
         </div>
         {children}
       </div>
@@ -205,11 +291,13 @@ Card.defaultProps = {
   style: null,
   className: "",
   expandable: false,
-  header: null,
-  exportTableId: "",
-  exportTable: false,
   exportContainer: false,
+  exportTable: false,
+  exportTableId: "",
+  modalDetail: false,
+  header: null,
   app: null,
+  onClickModal: () => {},
   cardContentStyle: {},
   absoluteExpandButton: false,
 };
@@ -217,11 +305,13 @@ Card.propTypes = {
   children: PropTypes.any,
   style: PropTypes.object,
   expandable: PropTypes.bool,
-  className: PropTypes.string,
-  header: PropTypes.object,
-  exportTableId: PropTypes.string,
   exportContainer: PropTypes.bool,
   exportTable: PropTypes.bool,
+  exportTableId: PropTypes.string,
+  modalDetail: PropTypes.bool,
+  onClickModal: PropTypes.func,
+  className: PropTypes.string,
+  header: PropTypes.object,
   app: PropTypes.object,
   absoluteExpandButton: PropTypes.bool,
   cardContentStyle: PropTypes.object,

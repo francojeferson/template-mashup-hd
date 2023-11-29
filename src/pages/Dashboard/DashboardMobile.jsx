@@ -52,6 +52,9 @@ function DashboardMobile({ app, config }) {
           {container[2].cards.map((card, index) => {
             return (
               <Card
+                expandable
+                exportTable
+                exportTableId={container[2].cards[1].nativeObject.id}
                 header={{ hardTitle: card.title.hardTitle }}
                 style={{ width: "100%", height: "250px" }}
               >

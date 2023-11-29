@@ -103,7 +103,11 @@ function DashboardDesktop({ app, config }) {
               customStyle={{ height: "100%", width: "32.1%" }}
               isMobile={false}
             ></KpiCard>
+
             <Card
+              expandable
+              exportTable
+              exportTableId={container[1].cards[1].nativeObject.id}
               header={{
                 hardTitle: container[1].cards[1].title.hardTitle,
               }}
@@ -131,7 +135,12 @@ function DashboardDesktop({ app, config }) {
           </div>
 
           <CardWrapper customStyle={{ height: "60%" }}>
-            <Card style={{ width: "100%", height: "100%" }}>
+            <Card
+              expandable
+              exportTable
+              exportTableId={container[2].cards[1].nativeObject.id}
+              style={{ width: "100%", height: "100%" }}
+            >
               <div
                 style={{
                   height: "100%",

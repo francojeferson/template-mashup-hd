@@ -1,14 +1,13 @@
-import React from "react";
 import PropTypes from "prop-types";
-import { ReactComponent as IconLinechart } from "../../assets/icons/line-chart.svg";
 import { ReactComponent as IconBarchart } from "../../assets/icons/bar-chart.svg";
+import { ReactComponent as IconCircle } from "../../assets/icons/circle-regular.svg";
 import { ReactComponent as IconGauge } from "../../assets/icons/gauge.svg";
 import { ReactComponent as IconKPI } from "../../assets/icons/kpi.svg";
+import { ReactComponent as IconLinechart } from "../../assets/icons/line-chart.svg";
+import { ReactComponent as IconMap } from "../../assets/icons/map.svg";
 import { ReactComponent as IconPiechart } from "../../assets/icons/pie-chart.svg";
 import { ReactComponent as IconScatterchart } from "../../assets/icons/scatter.svg";
 import { ReactComponent as IconTable } from "../../assets/icons/table.svg";
-import { ReactComponent as IconMap } from "../../assets/icons/map.svg";
-import { ReactComponent as IconCircle } from "../../assets/icons/circle-regular.svg";
 
 function ObjectLoader({ icon, color, height, width, className }) {
   const icons = {

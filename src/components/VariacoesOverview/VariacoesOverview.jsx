@@ -1,11 +1,9 @@
-import PropTypes from "prop-types";
-import { useEffect, useRef, useState } from "react";
-
 import Tab from "@mui/material/Tab";
 import Tabs from "@mui/material/Tabs";
 import echarts from "echarts";
+import PropTypes from "prop-types";
+import { useEffect, useRef, useState } from "react";
 import { useMediaQuery } from "react-responsive";
-
 import Utils from "../../QlikUtils";
 import appearance from "../Charts/Appearance";
 import BarChartDataProps from "../Charts/BarChartDataProps";

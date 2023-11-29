@@ -1,5 +1,5 @@
-import { createContext, useContext, useEffect, useState } from "react";
 import PropTypes from "prop-types";
+import { createContext, useContext, useEffect, useState } from "react";
 import engine from "../QlikEngine";
 
 const QlikContext = createContext();

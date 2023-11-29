@@ -1,5 +1,3 @@
-/* eslint-disable max-len */
-/* eslint-disable no-nested-ternary */
 import ReactEcharts from "echarts-for-react";
 import { cloneDeep } from "lodash";
 import numeral from "numeral";

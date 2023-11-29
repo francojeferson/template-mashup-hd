@@ -1,15 +1,11 @@
 import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-
-// COMPONENTS
-import Overlay from "../Overlay/Overlay";
-
-// HOOKS
 import { useBookMarkBar } from "../../context/BookMarkContainer";
 import { useFilterBar } from "../../context/FilterBar";
 import { useLeftBar } from "../../context/LeftBar";
 import { useSelections } from "../../context/Selections";
+import Overlay from "../Overlay/Overlay";
 
 function Header({ className }) {
   const slug = useLocation();

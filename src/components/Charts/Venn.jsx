@@ -2,7 +2,6 @@ import * as d3 from "d3";
 import PropTypes from "prop-types";
 import { useEffect, useRef, useState } from "react";
 import { VennDiagram } from "venn.js";
-
 import Utils from "../../QlikUtils";
 import FilterMessage from "../FilterMessage/FilterMessage";
 import ObjectError from "../ObjectError/ObjectError";

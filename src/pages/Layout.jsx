@@ -1,28 +1,20 @@
 import { Suspense, useEffect, useState } from "react";
+import { I18nextProvider } from "react-i18next";
 import { HashRouter, Redirect, Route, Switch } from "react-router-dom";
-
-// HOOKS
-import { useConfig } from "../context/Config";
-import { useFilterBar } from "../context/FilterBar";
-import { useLeftBar } from "../context/LeftBar";
-import { useQlik } from "../context/Qlik";
-
-// PAGES
-import Dashboard from "./Dashboard/Dashboard";
-import Detail from "./Detail/Detail";
-
-// COMPONENTS
+import logo from "../assets/icons/logo.svg";
 import AppLoader from "../components/AppLoader/AppLoader";
 import FilterMenu from "../components/FilterMenuNative/FilterMenu";
 import Header from "../components/Header/Header";
 import LeftSideMenu from "../components/LeftSideMenu/LeftSideMenu";
-
-// ASSETS
-import { I18nextProvider } from "react-i18next";
-import logo from "../assets/icons/logo.svg";
 import MiddlewareRoute from "../components/MiddlewareRoute";
+import { useConfig } from "../context/Config";
+import { useFilterBar } from "../context/FilterBar";
+import { useLeftBar } from "../context/LeftBar";
+import { useQlik } from "../context/Qlik";
 import i18n from "../i18n";
 import "../style.scss";
+import Dashboard from "./Dashboard/Dashboard";
+import Detail from "./Detail/Detail";
 import Auth from "./auth";
 import Logout from "./auth/Logout";
 

@@ -1,6 +1,5 @@
-import { createContext, useContext, useState } from "react";
-
 import PropTypes from "prop-types";
+import { createContext, useContext, useState } from "react";
 
 const FilterBarContext = createContext();
 

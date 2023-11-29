@@ -1,9 +1,8 @@
+import PropTypes from "prop-types";
 import { useEffect, useRef, useState } from "react";
+import ReactDom from "react-dom";
 import { useTranslation } from "react-i18next";
 import styled from "styled-components";
-
-import PropTypes from "prop-types";
-import ReactDom from "react-dom";
 import ComboHeader from "../ComboHeader/ComboHeader";
 import CircleLoader from "../Loaders/CircleLoader";
 

@@ -1,4 +1,3 @@
-/* eslint-disable */
 import axios, { Axios, AxiosRequestConfig, AxiosRequestHeaders } from "axios";
 import store from "../store";
 

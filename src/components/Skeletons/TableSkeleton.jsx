@@ -1,4 +1,3 @@
-import React from "react";
 import { Skeleton as SkeletonMui, styled } from "@mui/material";
 import PropTypes from "prop-types";
 

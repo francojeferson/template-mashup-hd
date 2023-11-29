@@ -2,9 +2,8 @@ import PropTypes from "prop-types";
 import { useEffect, useLayoutEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useLocation } from "react-router-dom";
-import { useLeftBar } from "../../context/LeftBar";
-
 import utils from "../../QlikUtils";
+import { useLeftBar } from "../../context/LeftBar";
 import NavItem from "./MenuItem/NavItem";
 
 function LeftSideMenu({ app, config, logo }) {

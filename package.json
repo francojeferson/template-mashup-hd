@@ -39,7 +39,7 @@
     "styled-components": "5.3.6",
     "uuid": "8.3.2",
     "venn.js": "0.2.20",
-    "webpack": "5.88.2"
+    "webpack": "5.94.0"
   },
   "scripts": {
     "start": "react-app-rewired start",

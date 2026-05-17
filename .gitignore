@@ -72,6 +72,10 @@ yarn.lock
 .env
 .env.*
 
+# Memory bank (LLM session context)
+.memory-bank/
+.clinerules/
+
 # Editor directories and files
 *.vscode/
 !.vscode/extensions.json

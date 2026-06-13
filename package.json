@@ -37,7 +37,7 @@
     "redux": "^4.2.1",
     "sass": "1.64.1",
     "styled-components": "5.3.6",
-    "uuid": "8.3.2",
+    "uuid": "14.0.0",
     "venn.js": "0.2.20",
     "webpack": "5.104.1"
   },

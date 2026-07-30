@@ -15,7 +15,7 @@ HEALTHCHECK NONE
 EXPOSE 8080
 
 # Stage 1, based on Nginx, to have only the compiled app, ready for production with Nginx
-FROM nginxinc/nginx-unprivileged:1.20
+FROM nginxinc/nginx-unprivileged:1.31
 COPY --from=build-stage /usr/src/app/build/ /usr/share/nginx/html
 COPY --from=build-stage /usr/src/app/nginx.conf /etc/nginx/conf.d/default.conf
 EXPOSE 8080

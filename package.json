@@ -74,7 +74,7 @@
     "@types/invariant": "^2.2.35",
     "@types/lodash": "^4.14.197",
     "@types/react-router-dom": "^5.3.3",
-    "copy-webpack-plugin": "11.0.0",
+    "copy-webpack-plugin": "14.0.0",
     "inputmask": "^5.0.8",
     "prettier": "^3.0.3",
     "react-app-rewired": "2.2.1",

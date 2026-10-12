@@ -99,7 +99,7 @@ function Card({
           vis.table.exportData({ format: "OOXML", state: "A" }).then((link) => {
             setLoadingExcel(false);
             const newLink = `https://qsense.mtrix.com.br${
-              process.env.REACT_APP_PREFIX
+              import.meta.env.REACT_APP_PREFIX
             }${link.substring(link.indexOf("tempcontent"))}`;
             window.open(newLink);
           });

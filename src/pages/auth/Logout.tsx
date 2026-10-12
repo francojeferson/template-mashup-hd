@@ -2,7 +2,7 @@ import { ReactElement, useCallback, useEffect, useState } from "react";
 import { deleteState } from "../../store/local-storage";
 import { ejectSessionHash } from "../../utils/xhr";
 
-const { REACT_APP_OWNER } = process.env;
+const { REACT_APP_OWNER } = import.meta.env;
 
 const Logout = (): ReactElement => {
   const [loop, setLoop] = useState(0);

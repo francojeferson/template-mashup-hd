@@ -85,3 +85,6 @@ yarn.lock
 *.njsproj
 *.sln
 *.sw?
+
+# Saida do build (Vite escreve em build/ para o Dockerfile/nginx)
+build/

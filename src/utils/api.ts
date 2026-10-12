@@ -19,7 +19,7 @@ interface ResultFornecedor {
 }
 
 const { REACT_APP_API_KEYCLOAK, REACT_APP_API_TRP, REACT_APP_SHARED } =
-  process.env;
+  import.meta.env;
 
 /**
  * KEYCLOAK

@@ -5,32 +5,21 @@ updates:
     schedule:
       interval: "semiannually"
     open-pull-requests-limit: 3
-    # O teto deste projeto e o `react-scripts@5.0.1` (CRA, descontinuado).
-    # Ele declara `peerOptional typescript "^3.2.1 || ^4"` e nao acompanha
-    # React 19, entao qualquer grupo que inclua esses majors nao instala —
-    # o PR #17 morreu exatamente assim, com ERESOLVE. Sem os ignores abaixo
-    # o dependabot reabre o mesmo PR immergivel a cada ciclo.
+    # Os ignores de `typescript`, `react-redux`, `react-i18next` e
+    # `@mui/styles` saíram: existiam pelo teto do react-scripts, que não
+    # existe mais desde a migração para Vite. Todos já estão atualizados.
     #
-    # react-redux 9 exige React >=18 e react-i18next 17 exige TypeScript >=5:
-    # ambos esbarram nos tetos acima. Verificado em 12/10 no PR #20.
+    # Sobrou um, e por outro motivo: o React 19 removeu `defaultProps` em
+    # componentes de função, e este projeto tem 81 arquivos que dependem
+    # disso — nenhum deles é componente de classe. O upgrade não quebra
+    # build nem tipo: os defaults simplesmente param de aplicar, em
+    # silêncio. Converter os 81 para parâmetro padrão é pré-requisito.
     #
-    # @mui/styles entra junto porque a propria MUI o declara incompativel
-    # com React 18+: ele so sai quando o projeto sair do CRA.
-    #
-    # AO MIGRAR PARA VITE: remova este bloco `ignore` inteiro. Ele existe
-    # pela limitacao do CRA, nao por escolha de versao.
+    # AO CONVERTER OS defaultProps: remova o bloco `ignore` inteiro.
     ignore:
-      - dependency-name: "typescript"
-        update-types: ["version-update:semver-major"]
       - dependency-name: "react"
         update-types: ["version-update:semver-major"]
       - dependency-name: "react-dom"
-        update-types: ["version-update:semver-major"]
-      - dependency-name: "react-redux"
-        update-types: ["version-update:semver-major"]
-      - dependency-name: "react-i18next"
-        update-types: ["version-update:semver-major"]
-      - dependency-name: "@mui/styles"
         update-types: ["version-update:semver-major"]
     groups:
       seguranca:

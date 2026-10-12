@@ -35,11 +35,11 @@
     "react-scripts": "5.0.1",
     "react-transition-group": "4.4.5",
     "redux": "^4.2.1",
-    "sass": "1.102.0",
+    "sass": "1.105.1",
     "styled-components": "5.3.6",
-    "uuid": "14.0.1",
+    "uuid": "14.0.2",
     "venn.js": "0.2.20",
-    "webpack": "5.109.2"
+    "webpack": "5.111.1"
   },
   "scripts": {
     "start": "react-app-rewired start",

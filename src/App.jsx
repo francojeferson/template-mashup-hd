@@ -22,14 +22,14 @@ function App() {
     });
   }
   const config = {
-    host: process.env.REACT_APP_HOST,
-    prefix: process.env.REACT_APP_PREFIX,
-    port: isNaN(Number(process.env.REACT_APP_PORT))
-      ? process.env.REACT_APP_PORT
-      : Number(process.env.REACT_APP_PORT),
+    host: import.meta.env.REACT_APP_HOST,
+    prefix: import.meta.env.REACT_APP_PREFIX,
+    port: isNaN(Number(import.meta.env.REACT_APP_PORT))
+      ? import.meta.env.REACT_APP_PORT
+      : Number(import.meta.env.REACT_APP_PORT),
     isSecure:
-      process.env.REACT_APP_IS_SECURE === "true" ||
-      process.env.REACT_APP_IS_SECURE,
+      import.meta.env.REACT_APP_IS_SECURE === "true" ||
+      import.meta.env.REACT_APP_IS_SECURE,
   };
 
   return (

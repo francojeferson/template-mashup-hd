@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import { useEffect, useRef, useState } from "react";
-import ReactDom from "react-dom";
+import { createPortal } from "react-dom";
 import styled from "styled-components";
 import ComboHeader from "../ComboHeader/ComboHeader";
 import CircleLoader from "../Loaders/CircleLoader";
@@ -99,7 +99,7 @@ function Card({
           vis.table.exportData({ format: "OOXML", state: "A" }).then((link) => {
             setLoadingExcel(false);
             const newLink = `https://qsense.mtrix.com.br${
-              process.env.REACT_APP_PREFIX
+              import.meta.env.REACT_APP_PREFIX
             }${link.substring(link.indexOf("tempcontent"))}`;
             window.open(newLink);
           });
@@ -278,7 +278,7 @@ function Card({
     </div>
   );
   return isExpanded ? (
-    ReactDom.createPortal(
+    createPortal(
       <Content />,
       document.getElementById("expandedWrapper"),
     )

@@ -32,7 +32,7 @@ function LayoutPage() {
   useEffect(() => {
     if (qlik) {
       setIsLoading(false);
-      const qvfId = process.env.REACT_APP_QVF_ID;
+      const qvfId = import.meta.env.REACT_APP_QVF_ID;
       const tempApp = qlik.openApp(qvfId, qlikConfig);
       window.app = tempApp;
       setApp(tempApp);

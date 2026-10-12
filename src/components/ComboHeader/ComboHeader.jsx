@@ -1,8 +1,8 @@
 import PropTypes from "prop-types";
 import { useEffect, useRef, useState } from "react";
 import utils from "../../QlikUtils";
-import { ReactComponent as BarIcon } from "../../assets/icons/bar-icon.svg";
-import { ReactComponent as LineIcon } from "../../assets/icons/line-icon.svg";
+import BarIcon from "../../assets/icons/bar-icon.svg?react";
+import LineIcon from "../../assets/icons/line-icon.svg?react";
 import Radio from "../Radio/Radio";
 import TooltipInfo from "../TooltipInfo/TooltipInfo";
 

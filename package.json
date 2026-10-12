@@ -6,15 +6,15 @@
   "dependencies": {
     "@emotion/react": "11.14.0",
     "@emotion/styled": "11.14.1",
-    "@mui/icons-material": "5.10.6",
-    "@mui/material": "5.10.1",
+    "@mui/icons-material": "^9.5.0",
+    "@mui/material": "^9.5.0",
     "@unform/core": "^2.1.6",
     "@unform/web": "^2.1.6",
     "axios": "^1.4.0",
     "d3": "7.9.0",
     "echarts": "6.1.0",
     "echarts-for-react": "3.0.7",
-    "i18next": "22.0.4",
+    "i18next": "^26.4.2",
     "i18next-http-backend": "4.0.2",
     "invariant": "^2.2.4",
     "jwt-decode": "^3.1.2",
@@ -23,15 +23,15 @@
     "nookies": "2.5.2",
     "numeral": "2.0.6",
     "prop-types": "15.8.1",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
-    "react-i18next": "12.1.4",
-    "react-redux": "^8.1.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-i18next": "^17.0.16",
+    "react-redux": "^9.3.0",
     "react-responsive": "9.0.0-beta.10",
     "react-responsive-carousel": "3.2.23",
-    "react-router-dom": "5.2.0",
+    "react-router-dom": "^5.3.4",
     "react-transition-group": "4.4.5",
-    "redux": "^4.2.1",
+    "redux": "^5.0.1",
     "sass": "1.105.1",
     "styled-components": "5.3.6",
     "uuid": "14.0.2",
@@ -41,7 +41,8 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "start": "vite"
+    "start": "vite",
+    "typecheck": "tsc --noEmit"
   },
   "eslintConfig": {
     "extends": [
@@ -69,11 +70,13 @@
     "inputmask": "^5.0.8",
     "prettier": "^3.0.3",
     "react-toastify": "^9.1.3",
-    "typescript": "4.9.5",
+    "typescript": "^5.9.3",
     "yup": "^1.2.0",
     "vite": "^7.1.14",
     "@vitejs/plugin-react": "^5.0.4",
-    "vite-plugin-svgr": "^4.5.0"
+    "vite-plugin-svgr": "^4.5.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1"
   },
   "type": "module"
 }

@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import { useEffect, useRef, useState } from "react";
-import ReactDom from "react-dom";
+import { createPortal } from "react-dom";
 import styled from "styled-components";
 import ComboHeader from "../ComboHeader/ComboHeader";
 import CircleLoader from "../Loaders/CircleLoader";
@@ -278,7 +278,7 @@ function Card({
     </div>
   );
   return isExpanded ? (
-    ReactDom.createPortal(
+    createPortal(
       <Content />,
       document.getElementById("expandedWrapper"),
     )

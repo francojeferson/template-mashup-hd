@@ -42,7 +42,7 @@ const ButtonWrapper = styled.div`
   }
 `;
 
-const VennWithFilters = ({ app, config }) => {
+const VennWithFilters = ({ app = null, config = {} }) => {
   const { customRadio, venn } = config.basketMix.cards[1];
   const { options } = customRadio;
   const [selectedRadio, setSelectedRadio] = useState("Com Compras");
@@ -648,11 +648,6 @@ const VennWithFilters = ({ app, config }) => {
       </VennWrapper>
     </>
   );
-};
-
-VennWithFilters.defaultProps = {
-  app: null,
-  config: {},
 };
 
 VennWithFilters.propTypes = {

@@ -22,7 +22,10 @@ const backgroundBody = {
 const timeRefresh = 1500000;
 // const timeRefresh = 10000;
 
-const MiddlewareRoute = ({ component, publico }: Props): ReactElement => {
+const MiddlewareRoute = ({
+  component,
+  publico = false,
+}: Props): ReactElement => {
   const dispatch = useDispatch();
   const session = useSelector((state: StateRedux) => state.session);
 
@@ -99,10 +102,6 @@ const MiddlewareRoute = ({ component, publico }: Props): ReactElement => {
 
   // return container ? (<Container>{component}</Container>) : component;
   return component;
-};
-
-MiddlewareRoute.defaultProps = {
-  publico: false,
 };
 
 export default MiddlewareRoute;

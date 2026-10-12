@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
 
-function EditFavoriteModal({ app, bookMark }) {
+function EditFavoriteModal({ app = null, bookMark = {} }) {
   const [editActive, setEditActive] = useState(false);
   const [modalDeleteBookMark, setModalDeleteBookMark] = useState(false);
   const [bookmarkHandle, setBookmarkHandle] = useState(null);
@@ -162,11 +162,6 @@ function EditFavoriteModal({ app, bookMark }) {
     </>
   );
 }
-EditFavoriteModal.defaultProps = {
-  app: null,
-  bookMark: {},
-};
-
 EditFavoriteModal.propTypes = {
   app: PropTypes.object,
   bookMark: PropTypes.object,

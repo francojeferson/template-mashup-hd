@@ -7,7 +7,7 @@ import { useLeftBar } from "../../context/LeftBar";
 import { useSelections } from "../../context/Selections";
 import Overlay from "../Overlay/Overlay";
 
-function Header({ className }) {
+function Header({ className = "" }) {
   const slug = useLocation();
   const [locationPath, setLocationPath] = useState("");
   const { leftBarOpened, setLeftBarOpened } = useLeftBar();
@@ -74,10 +74,6 @@ function Header({ className }) {
     </div>
   );
 }
-
-Header.defaultProps = {
-  className: "",
-};
 
 Header.propTypes = {
   className: PropTypes.string,

@@ -2,13 +2,13 @@ import PropTypes from "prop-types";
 import React, { useEffect, useRef } from "react";
 
 function NativeFilter({
-  app,
-  reference,
-  className,
-  onClick,
-  style,
-  noInteraction,
-  containerStyle,
+  app = null,
+  reference = {},
+  className = "",
+  onClick = function () {},
+  style = {},
+  noInteraction = false,
+  containerStyle = {},
 }) {
   const ref = useRef();
   const visRef = useRef();
@@ -56,16 +56,6 @@ function NativeFilter({
     </div>
   );
 }
-
-NativeFilter.defaultProps = {
-  app: null,
-  reference: {},
-  className: "",
-  style: {},
-  onClick: function () {},
-  noInteraction: false,
-  containerStyle: {},
-};
 
 NativeFilter.propTypes = {
   app: PropTypes.object,

@@ -4,7 +4,13 @@ import utils from "../../QlikUtils";
 import ObjectLoader from "../ObjectLoader/ObjectLoader";
 import TooltipInfo from "../TooltipInfo/TooltipInfo";
 
-function TextKpi({ app, reference, style, containerStyle, loaderHeight }) {
+function TextKpi({
+  app = null,
+  reference = {},
+  style = {},
+  containerStyle = {},
+  loaderHeight = "",
+}) {
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState({});
   const visRef = useRef([]);
@@ -83,14 +89,6 @@ function TextKpi({ app, reference, style, containerStyle, loaderHeight }) {
     </div>
   );
 }
-
-TextKpi.defaultProps = {
-  app: null,
-  style: {},
-  containerStyle: {},
-  reference: {},
-  loaderHeight: "",
-};
 
 TextKpi.propTypes = {
   app: PropTypes.object,

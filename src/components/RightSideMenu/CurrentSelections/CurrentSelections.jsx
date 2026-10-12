@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-function CurrentSelections({ app, selections }) {
+function CurrentSelections({ app = null, selections = [] }) {
   return (
     <div className="currentSelections">
       {selections.length > 0 ? (
@@ -26,11 +26,6 @@ function CurrentSelections({ app, selections }) {
     </div>
   );
 }
-
-CurrentSelections.defaultProps = {
-  app: null,
-  selections: [],
-};
 
 CurrentSelections.propTypes = {
   app: PropTypes.object,

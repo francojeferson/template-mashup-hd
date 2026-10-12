@@ -23,8 +23,8 @@
     "nookies": "2.5.2",
     "numeral": "2.0.6",
     "prop-types": "15.8.1",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
     "react-i18next": "^17.0.16",
     "react-redux": "^9.3.0",
     "react-responsive": "9.0.0-beta.10",
@@ -75,8 +75,8 @@
     "vite": "^7.1.14",
     "@vitejs/plugin-react": "^5.0.4",
     "vite-plugin-svgr": "^4.5.0",
-    "@types/react": "^18.3.12",
-    "@types/react-dom": "^18.3.1"
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0"
   },
   "type": "module"
 }

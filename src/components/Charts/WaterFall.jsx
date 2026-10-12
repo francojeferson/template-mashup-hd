@@ -8,7 +8,12 @@ import Utils from "../../QlikUtils";
 import ObjectLoader from "../ObjectLoader/ObjectLoader";
 import appearance from "./Appearance";
 
-function Waterfall({ app, style, reference, options }) {
+function Waterfall({
+  app = null,
+  style = {},
+  reference,
+  options = appearance.waterfall(),
+}) {
   // const [finalOptions, setFinalOptions] = useState(options);
   const [loading, setLoading] = useState(true);
   const [chartData, setChartData] = useState();
@@ -287,12 +292,6 @@ function Waterfall({ app, style, reference, options }) {
     </div>
   );
 }
-
-Waterfall.defaultProps = {
-  app: null,
-  style: {},
-  options: appearance.waterfall(),
-};
 
 Waterfall.propTypes = {
   app: PropTypes.object,

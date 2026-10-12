@@ -50,7 +50,7 @@ const LoaderWrapper = styled("div")({
     maxHeight: "16px",
   },
 });
-function AnalisePDVs({ app, config, index }) {
+function AnalisePDVs({ app = null, config = {}, index = 0 }) {
   const [activeTab, setActiveTab] = useState(index);
   const [loadingExcel, setLoadingExcel] = useState(false);
   const { tabs } = config.overview.cards[1].modal;
@@ -160,12 +160,6 @@ function AnalisePDVs({ app, config, index }) {
 }
 
 export default AnalisePDVs;
-
-AnalisePDVs.defaultProps = {
-  app: null,
-  config: {},
-  index: 0,
-};
 
 AnalisePDVs.propTypes = {
   app: PropTypes.object,

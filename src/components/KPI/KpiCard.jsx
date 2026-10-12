@@ -7,15 +7,15 @@ import NativeObject from "../../components/NativeObject/NativeObject";
 import Card from "../Cards/Card";
 
 function KpiCard({
-  app,
-  KPITitle,
-  iconId,
-  percentageId,
-  greyValueId,
-  valueId,
+  app = null,
+  KPITitle = {},
+  iconId = null,
+  percentageId = null,
+  greyValueId = null,
+  valueId = null,
   customStyle,
   isMobile,
-  selectedCheck,
+  selectedCheck = "",
 }) {
   const [loading, setLoading] = useState(true);
 
@@ -185,16 +185,6 @@ function KpiCard({
     </Card>
   );
 }
-
-KpiCard.defaultProps = {
-  app: null,
-  KPITitle: {},
-  iconId: null,
-  percentageId: null,
-  greyValueId: null,
-  valueId: null,
-  selectedCheck: "",
-};
 
 KpiCard.propTypes = {
   app: PropTypes.object,

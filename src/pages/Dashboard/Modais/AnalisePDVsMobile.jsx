@@ -15,7 +15,7 @@ const LayoutWrapper = styled("div")({
   width: "100%",
   justifyItems: "stretch",
 });
-function AnalisePDVsMobile({ app, config, index }) {
+function AnalisePDVsMobile({ app = null, config = {}, index = 0 }) {
   const [activeTab, setActiveTab] = useState(index);
   const { tabs } = config.overview.cards[1].modal;
   const { setExportId } = useExportId();
@@ -103,12 +103,6 @@ function AnalisePDVsMobile({ app, config, index }) {
 }
 
 export default AnalisePDVsMobile;
-
-AnalisePDVsMobile.defaultProps = {
-  app: null,
-  config: {},
-  index: 0,
-};
 
 AnalisePDVsMobile.propTypes = {
   app: PropTypes.object,

@@ -3,7 +3,7 @@ import { createContext, useContext, useState } from "react";
 
 const ExportIdContext = createContext();
 
-function ExportIdProvider({ children }) {
+function ExportIdProvider({ children = {} }) {
   const [exportId, setExportId] = useState(false);
 
   return (
@@ -22,10 +22,6 @@ function useExportId() {
 
   return context;
 }
-
-ExportIdProvider.defaultProps = {
-  children: {},
-};
 
 ExportIdProvider.propTypes = {
   children: PropTypes.object,

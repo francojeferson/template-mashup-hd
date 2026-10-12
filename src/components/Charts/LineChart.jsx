@@ -20,14 +20,14 @@ const LineChartWrapper = styled("div")({
 });
 
 function LineChart({
-  app,
-  options,
-  style,
-  onEvents,
-  reference,
-  autoDataZoom,
-  echarts,
-  group,
+  app = null,
+  options = appearance.linechart(),
+  style = {},
+  onEvents = null,
+  reference = null,
+  autoDataZoom = false,
+  echarts = null,
+  group = null,
 }) {
   // states
   const [data, setData] = useState();
@@ -442,17 +442,6 @@ function LineChart({
     </div>
   );
 }
-
-LineChart.defaultProps = {
-  app: null,
-  reference: null,
-  style: {},
-  options: appearance.linechart(),
-  onEvents: null,
-  autoDataZoom: false,
-  group: null,
-  echarts: null,
-};
 
 LineChart.propTypes = {
   app: PropTypes.object,

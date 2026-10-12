@@ -3,7 +3,7 @@ import Card from "../../components/Cards/Card";
 import KpiCard from "../../components/KPI/KpiCard";
 import NativeObject from "../../components/NativeObject/NativeObject";
 
-function DashboardMobile({ app, config }) {
+function DashboardMobile({ app = null, config = {} }) {
   const { container } = config.dashboard;
 
   return (
@@ -72,11 +72,6 @@ function DashboardMobile({ app, config }) {
     </div>
   );
 }
-
-DashboardMobile.defaultProps = {
-  app: null,
-  config: {},
-};
 
 DashboardMobile.propTypes = {
   app: PropTypes.object,

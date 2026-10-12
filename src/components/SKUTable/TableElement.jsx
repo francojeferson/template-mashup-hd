@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import utils from "../../QlikUtils";
 import ObjectError from "../ObjectError/ObjectError";
 
-const TableElement = ({ app, reference }) => {
+const TableElement = ({ app = null, reference = {} }) => {
   const refsToClose = useRef();
   const [data, setData] = useState({});
   const [isLoaded, setIsLoaded] = useState(false);
@@ -89,11 +89,6 @@ const TableElement = ({ app, reference }) => {
       {data?.value}
     </td>
   );
-};
-
-TableElement.defaultProps = {
-  app: null,
-  reference: {},
 };
 
 TableElement.propTypes = {

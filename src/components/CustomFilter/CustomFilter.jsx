@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import { memo, useEffect, useState } from "react";
 import CustomFilteritem from "./CustomFilterItem";
 
-function CustomFilter({ app, filter, singleFilter }) {
+function CustomFilter({ app = null, filter = {}, singleFilter = false }) {
   const [idList, setIdList] = useState("");
   const SF = singleFilter;
   useEffect(() => {
@@ -35,12 +35,6 @@ function CustomFilter({ app, filter, singleFilter }) {
 
   return <div style={{ display: "flex" }}>{generateFilterItems()}</div>;
 }
-
-CustomFilter.defaultProps = {
-  app: null,
-  filter: {},
-  singleFilter: false,
-};
 
 CustomFilter.propTypes = {
   app: PropTypes.object,

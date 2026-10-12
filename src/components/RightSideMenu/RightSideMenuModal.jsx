@@ -6,11 +6,11 @@ import NativeFilter from "../NativeFilter/NativeFilter";
 import CurrentSelections from "./CurrentSelections/CurrentSelections";
 
 function RightSideMenuModal({
-  app,
-  selections,
-  backCount,
-  forwardCount,
-  filters,
+  app = null,
+  selections = [],
+  backCount = 0,
+  forwardCount = 0,
+  filters = [],
 }) {
   const [contentTab, setContentTab] = useState(false);
   const [activeFilter, setActiveFilter] = useState(null);
@@ -172,14 +172,6 @@ function RightSideMenuModal({
     </div>
   );
 }
-
-RightSideMenuModal.defaultProps = {
-  app: null,
-  filters: [],
-  selections: [],
-  backCount: 0,
-  forwardCount: 0,
-};
 
 RightSideMenuModal.propTypes = {
   app: PropTypes.object,

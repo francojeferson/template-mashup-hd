@@ -2,7 +2,7 @@ import { Tooltip } from "@mui/material";
 import PropTypes from "prop-types";
 import { useMediaQuery } from "react-responsive";
 
-function TooltipInfo({ text, style }) {
+function TooltipInfo({ text = "", style = {} }) {
   const isMobile = useMediaQuery({ query: "(max-width: 980px)" });
 
   return !isMobile ? (
@@ -65,11 +65,6 @@ function TooltipInfo({ text, style }) {
     </>
   );
 }
-
-TooltipInfo.defaultProps = {
-  text: "",
-  style: {},
-};
 
 TooltipInfo.propTypes = {
   text: PropTypes.string,

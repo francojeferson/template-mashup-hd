@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { Fragment, useEffect, useState } from "react";
 
-function CustomFilterItem({ app, id, singleFilter }) {
+function CustomFilterItem({ app = null, id = "", singleFilter = false }) {
   const [fieldSearchList, setFieldSearchList] = useState([]);
   const [fieldLength, setFieldLength] = useState(0);
   const [config, setConfig] = useState({});
@@ -183,12 +183,6 @@ function CustomFilterItem({ app, id, singleFilter }) {
     </div>
   );
 }
-
-CustomFilterItem.defaultProps = {
-  app: null,
-  id: "",
-  singleFilter: false,
-};
 
 CustomFilterItem.propTypes = {
   app: PropTypes.object,

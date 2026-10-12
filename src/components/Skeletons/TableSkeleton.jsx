@@ -27,7 +27,7 @@ const SkeletonsRow = () => (
   </Row>
 );
 
-const TableSkeleton = ({ children }) => (
+const TableSkeleton = ({ children = {} }) => (
   <Wrapper>
     {[1, 2, 3, 4, 5].map((_, index) => (
       <SkeletonsRow key={`tableSkeleton-${index}-${_}`} />
@@ -35,10 +35,6 @@ const TableSkeleton = ({ children }) => (
     {children}
   </Wrapper>
 );
-
-TableSkeleton.defaultProps = {
-  children: {},
-};
 
 TableSkeleton.propTypes = {
   children: PropTypes.node,

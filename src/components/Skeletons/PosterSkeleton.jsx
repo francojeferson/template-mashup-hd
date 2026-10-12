@@ -59,7 +59,7 @@ const Poster = () => (
   </SkeletonsContainer>
 );
 
-const PosterSkeleton = ({ children, isMobile }) => {
+const PosterSkeleton = ({ children = {}, isMobile = false }) => {
   const quantity = isMobile ? [1] : [1, 2, 3];
   return (
     <SkeletonsWrapper>
@@ -70,11 +70,6 @@ const PosterSkeleton = ({ children, isMobile }) => {
       {children}
     </SkeletonsWrapper>
   );
-};
-
-PosterSkeleton.defaultProps = {
-  children: {},
-  isMobile: false,
 };
 
 PosterSkeleton.propTypes = {

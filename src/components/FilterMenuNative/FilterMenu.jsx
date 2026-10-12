@@ -9,7 +9,7 @@ import NativeFilter from "../NativeFilter/NativeFilter";
 import Overlay from "../Overlay/Overlay";
 import RightSideMenu from "../RightSideMenu/RightSideMenu";
 
-function FilterMenu({ app, filters, onDemand }) {
+function FilterMenu({ app = null, filters = {}, onDemand = false }) {
   const { filterBarOpened, setFilterBarOpened } = useFilterBar();
   const { selections, setSelections } = useSelections();
   const { bookMarkBarOpened, setBookMarkBarOpened } = useBookMarkBar();
@@ -201,12 +201,6 @@ function FilterMenu({ app, filters, onDemand }) {
     </div>
   );
 }
-
-FilterMenu.defaultProps = {
-  app: null,
-  filters: {},
-  onDemand: false,
-};
 
 FilterMenu.propTypes = {
   app: PropTypes.object,

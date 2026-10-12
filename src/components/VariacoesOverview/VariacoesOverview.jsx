@@ -52,7 +52,7 @@ const extractWaterfallData = (item, label) => ({
   color: item.qAttrExps ? item.qAttrExps.qValues[0].qText : "#38BC9A",
 });
 
-const VariacoesOverview = ({ app, config }) => {
+const VariacoesOverview = ({ app = null, config = {} }) => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -390,11 +390,6 @@ const VariacoesOverview = ({ app, config }) => {
   );
 };
 
-VariacoesOverview.defaultProps = {
-  app: null,
-  config: {},
-};
-
 VariacoesOverview.propTypes = {
   app: PropTypes.object,
   config: PropTypes.object,
@@ -402,7 +397,7 @@ VariacoesOverview.propTypes = {
 
 export default VariacoesOverview;
 
-const VariacaoIndividual = ({ app, data }) => {
+const VariacaoIndividual = ({ app = null, data = [] }) => {
   const [activeTab, setActiveTab] = useState(0);
 
   const handleTabChange = (e, newData) => {
@@ -457,17 +452,12 @@ const VariacaoIndividual = ({ app, data }) => {
   );
 };
 
-VariacaoIndividual.defaultProps = {
-  app: null,
-  data: [],
-};
-
 VariacaoIndividual.propTypes = {
   app: PropTypes.object,
   data: PropTypes.array,
 };
 
-const VariacaoEstoque = ({ app, data }) => {
+const VariacaoEstoque = ({ app = null, data = [] }) => {
   const [activeTab, setActiveTab] = useState(0);
 
   const handleTabChange = (e, newData) => {
@@ -518,11 +508,6 @@ const VariacaoEstoque = ({ app, data }) => {
       </TabPanel>
     </>
   );
-};
-
-VariacaoEstoque.defaultProps = {
-  app: null,
-  data: [],
 };
 
 VariacaoEstoque.propTypes = {

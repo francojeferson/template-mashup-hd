@@ -1,7 +1,12 @@
 import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
 
-function VariableRadio({ app, values, variable, setActualValue }) {
+function VariableRadio({
+  app = null,
+  values = [],
+  variable = "",
+  setActualValue = () => {},
+}) {
   const [active, setActive] = useState("");
   const [loaded, setLoaded] = useState(false);
 
@@ -56,13 +61,6 @@ function VariableRadio({ app, values, variable, setActualValue }) {
     );
   }
 }
-
-VariableRadio.defaultProps = {
-  app: null,
-  values: [],
-  variable: "",
-  setActualValue: () => {},
-};
 
 VariableRadio.propTypes = {
   app: PropTypes.any,

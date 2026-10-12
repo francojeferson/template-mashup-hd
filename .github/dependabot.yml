@@ -11,6 +11,9 @@ updates:
     # o PR #17 morreu exatamente assim, com ERESOLVE. Sem os ignores abaixo
     # o dependabot reabre o mesmo PR immergivel a cada ciclo.
     #
+    # react-redux 9 exige React >=18 e react-i18next 17 exige TypeScript >=5:
+    # ambos esbarram nos tetos acima. Verificado em 12/10 no PR #20.
+    #
     # @mui/styles entra junto porque a propria MUI o declara incompativel
     # com React 18+: ele so sai quando o projeto sair do CRA.
     #
@@ -22,6 +25,10 @@ updates:
       - dependency-name: "react"
         update-types: ["version-update:semver-major"]
       - dependency-name: "react-dom"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "react-redux"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "react-i18next"
         update-types: ["version-update:semver-major"]
       - dependency-name: "@mui/styles"
         update-types: ["version-update:semver-major"]

@@ -5,6 +5,26 @@ updates:
     schedule:
       interval: "semiannually"
     open-pull-requests-limit: 3
+    # O teto deste projeto e o `react-scripts@5.0.1` (CRA, descontinuado).
+    # Ele declara `peerOptional typescript "^3.2.1 || ^4"` e nao acompanha
+    # React 19, entao qualquer grupo que inclua esses majors nao instala —
+    # o PR #17 morreu exatamente assim, com ERESOLVE. Sem os ignores abaixo
+    # o dependabot reabre o mesmo PR immergivel a cada ciclo.
+    #
+    # @mui/styles entra junto porque a propria MUI o declara incompativel
+    # com React 18+: ele so sai quando o projeto sair do CRA.
+    #
+    # AO MIGRAR PARA VITE: remova este bloco `ignore` inteiro. Ele existe
+    # pela limitacao do CRA, nao por escolha de versao.
+    ignore:
+      - dependency-name: "typescript"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "react"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "react-dom"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "@mui/styles"
+        update-types: ["version-update:semver-major"]
     groups:
       seguranca:
         applies-to: security-updates

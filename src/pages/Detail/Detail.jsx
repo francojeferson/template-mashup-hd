@@ -3,7 +3,7 @@ import { useMediaQuery } from "react-responsive";
 import DetailDesktop from "./DetailDesktop";
 import DetailMobile from "./DetailMobile";
 
-function Detail({ app, config, filter }) {
+function Detail({ app = null, config = {}, filter = "" }) {
   const isMobile = useMediaQuery({ query: "(max-width: 980px)" });
 
   return isMobile ? (
@@ -12,12 +12,6 @@ function Detail({ app, config, filter }) {
     <DetailDesktop app={app} config={config} filter={filter} />
   );
 }
-
-Detail.defaultProps = {
-  app: null,
-  config: {},
-  filter: "",
-};
 
 Detail.propTypes = {
   app: PropTypes.object,

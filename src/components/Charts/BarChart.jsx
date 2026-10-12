@@ -11,16 +11,16 @@ import ObjectLoader from "../ObjectLoader/ObjectLoader";
 import Appearance from "./Appearance";
 
 function BarChart({
-  app,
-  options,
-  style,
-  reference,
-  autoDataZoom,
-  echarts,
-  group,
-  multiTooltip,
-  horizontal,
-  showScrollBar,
+  app = null,
+  options = Appearance.barchart(),
+  style = {},
+  reference = null,
+  autoDataZoom = false,
+  echarts = null,
+  group = null,
+  multiTooltip = false,
+  horizontal = false,
+  showScrollBar = false,
 }) {
   // states
   const [data, setData] = useState(null);
@@ -333,19 +333,6 @@ function BarChart({
     </div>
   );
 }
-
-BarChart.defaultProps = {
-  app: null,
-  reference: null,
-  style: {},
-  options: Appearance.barchart(),
-  autoDataZoom: false,
-  group: null,
-  echarts: null,
-  horizontal: false,
-  multiTooltip: false,
-  showScrollBar: false,
-};
 
 BarChart.propTypes = {
   app: PropTypes.object,

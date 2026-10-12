@@ -3,7 +3,7 @@ import { createContext, useContext, useState } from "react";
 
 const ModalContext = createContext();
 
-function ModalProvider({ children }) {
+function ModalProvider({ children = {} }) {
   const [selections, setSelections] = useState([]);
   const [filterBarModalOpened, setFilterBarModalOpened] = useState(false);
 
@@ -30,10 +30,6 @@ function useModal() {
 
   return context;
 }
-
-ModalProvider.defaultProps = {
-  children: {},
-};
 
 ModalProvider.propTypes = {
   children: PropTypes.object,

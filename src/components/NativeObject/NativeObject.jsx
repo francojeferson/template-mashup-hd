@@ -2,7 +2,13 @@ import PropTypes from "prop-types";
 import React, { useEffect, useRef } from "react";
 import ObjectLoader from "../ObjectLoader/ObjectLoader";
 
-function NativeObject({ app, reference, className, style, type }) {
+function NativeObject({
+  app = null,
+  reference = {},
+  className = "",
+  style = {},
+  type = "",
+}) {
   const ref = useRef();
   const visRef = useRef();
 
@@ -30,14 +36,6 @@ function NativeObject({ app, reference, className, style, type }) {
     </div>
   );
 }
-
-NativeObject.defaultProps = {
-  app: null,
-  reference: {},
-  className: "",
-  style: {},
-  type: "",
-};
 
 NativeObject.propTypes = {
   app: PropTypes.object,

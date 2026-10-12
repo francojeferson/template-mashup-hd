@@ -2,7 +2,12 @@ import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
 import Utils from "../../QlikUtils";
 
-function Table({ app, reference, onRowClick, className }) {
+function Table({
+  app = {},
+  reference = {},
+  onRowClick = () => {},
+  className = "table",
+}) {
   const [data, setData] = useState({
     headerData: [],
     bodyData: [],
@@ -87,13 +92,6 @@ function Table({ app, reference, onRowClick, className }) {
     </div>
   );
 }
-
-Table.defaultProps = {
-  app: {},
-  onRowClick: () => {},
-  reference: {},
-  className: "table",
-};
 
 Table.propTypes = {
   app: PropTypes.object,

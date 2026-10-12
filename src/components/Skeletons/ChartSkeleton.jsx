@@ -25,7 +25,7 @@ const BarsWrapper = styled("div")({
   justifyContent: "space-between",
 });
 
-const ChartSkeleton = ({ children }) => (
+const ChartSkeleton = ({ children = {} }) => (
   <Wrapper>
     <BarsWrapper>
       {[93, 140, 80, 21, 160, 140].map((height, index) => (
@@ -41,10 +41,6 @@ const ChartSkeleton = ({ children }) => (
     {children}
   </Wrapper>
 );
-
-ChartSkeleton.defaultProps = {
-  children: {},
-};
 
 ChartSkeleton.propTypes = {
   children: PropTypes.node,

@@ -44,19 +44,19 @@ const LoaderWrapper = styled("div")({
 });
 
 function Card({
-  children,
-  style,
-  className,
-  expandable,
-  absoluteExpandButton,
-  header,
-  app,
-  cardContentStyle,
-  exportTable,
-  exportTableId,
-  exportContainer,
-  modalDetail,
-  onClickModal,
+  children = null,
+  style = null,
+  className = "",
+  expandable = false,
+  absoluteExpandButton = false,
+  header = null,
+  app = null,
+  cardContentStyle = {},
+  exportTable = false,
+  exportTableId = "",
+  exportContainer = false,
+  modalDetail = false,
+  onClickModal = () => {},
   tooltip,
   tooltipKpi,
 }) {
@@ -278,29 +278,11 @@ function Card({
     </div>
   );
   return isExpanded ? (
-    createPortal(
-      <Content />,
-      document.getElementById("expandedWrapper"),
-    )
+    createPortal(<Content />, document.getElementById("expandedWrapper"))
   ) : (
     <Content />
   );
 }
-Card.defaultProps = {
-  children: null,
-  style: null,
-  className: "",
-  expandable: false,
-  exportContainer: false,
-  exportTable: false,
-  exportTableId: "",
-  modalDetail: false,
-  header: null,
-  app: null,
-  onClickModal: () => {},
-  cardContentStyle: {},
-  absoluteExpandButton: false,
-};
 Card.propTypes = {
   children: PropTypes.any,
   style: PropTypes.object,

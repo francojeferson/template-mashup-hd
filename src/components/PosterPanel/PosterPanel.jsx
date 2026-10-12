@@ -13,7 +13,7 @@ const PosterContainer = styled("div")({
   },
 });
 
-function PosterPanel({ app, reference }) {
+function PosterPanel({ app, reference = {} }) {
   const { title, subtitle, tooltip, labels } = reference;
 
   return (
@@ -41,10 +41,6 @@ function PosterPanel({ app, reference }) {
     </PosterContainer>
   );
 }
-
-PosterPanel.defaultProps = {
-  reference: {},
-};
 
 PosterPanel.propTypes = {
   app: PropTypes.object.isRequired,

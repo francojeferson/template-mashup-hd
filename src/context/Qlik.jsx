@@ -4,7 +4,18 @@ import engine from "../QlikEngine";
 
 const QlikContext = createContext();
 
-function QlikProvider({ children, config }) {
+function QlikProvider({
+  children = {},
+  config = {
+    host: window.location.hostname,
+    prefix: window.location.pathname.substr(
+      0,
+      window.location.pathname.toLowerCase().lastIndexOf("/extensions") + 1,
+    ),
+    port: window.location.port,
+    isSecure: window.location.protocol === "https:",
+  },
+}) {
   const [qlik, setQlik] = useState(null);
   const [qlikConfig, setQlikConfig] = useState(null);
   const [actualApp, setActualApp] = useState(null);
@@ -50,19 +61,6 @@ function useQlik() {
 
   return context;
 }
-
-QlikProvider.defaultProps = {
-  children: {},
-  config: {
-    host: window.location.hostname,
-    prefix: window.location.pathname.substr(
-      0,
-      window.location.pathname.toLowerCase().lastIndexOf("/extensions") + 1,
-    ),
-    port: window.location.port,
-    isSecure: window.location.protocol === "https:",
-  },
-};
 
 QlikProvider.propTypes = {
   children: PropTypes.object,

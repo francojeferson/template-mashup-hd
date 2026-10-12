@@ -3,7 +3,7 @@ import { createContext, useContext, useState } from "react";
 
 const LeftBarContext = createContext();
 
-function LeftBarProvider({ children }) {
+function LeftBarProvider({ children = {} }) {
   const [leftBarOpened, setLeftBarOpened] = useState(window.innerWidth > 688);
 
   return (
@@ -22,10 +22,6 @@ function useLeftBar() {
 
   return context;
 }
-
-LeftBarProvider.defaultProps = {
-  children: {},
-};
 
 LeftBarProvider.propTypes = {
   children: PropTypes.object,

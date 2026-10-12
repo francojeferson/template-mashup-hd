@@ -4,7 +4,14 @@ import { createRef, useEffect, useState } from "react";
 import Utils from "../../QlikUtils";
 import ObjectLoader from "../ObjectLoader/ObjectLoader";
 
-function CustomTable({ app, reference, className }) {
+function CustomTable({
+  app = {},
+  reference = {
+    height: 40,
+    loadMore: 20,
+  },
+  className = "table",
+}) {
   const [searchOpened, setSearchOpened] = useState(false);
   const [searchWord, setSearchWord] = useState("");
   const [eventAdded, setEventAdded] = useState(false);
@@ -346,15 +353,6 @@ function CustomTable({ app, reference, className }) {
     </div>
   );
 }
-
-CustomTable.defaultProps = {
-  app: {},
-  reference: {
-    height: 40,
-    loadMore: 20,
-  },
-  className: "table",
-};
 
 CustomTable.propTypes = {
   app: PropTypes.object,

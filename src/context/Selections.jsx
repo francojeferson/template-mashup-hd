@@ -3,7 +3,7 @@ import { createContext, useContext, useState } from "react";
 
 const SelectionsContext = createContext();
 
-function SelectionsProvider({ children }) {
+function SelectionsProvider({ children = {} }) {
   const [selections, setSelections] = useState([]);
 
   return (
@@ -22,10 +22,6 @@ function useSelections() {
 
   return context;
 }
-
-SelectionsProvider.defaultProps = {
-  children: {},
-};
 
 SelectionsProvider.propTypes = {
   children: PropTypes.object,

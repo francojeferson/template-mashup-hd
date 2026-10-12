@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import { useEffect, useRef, useState } from "react";
 import NativeObject from "../NativeObject/NativeObject";
 
-function InputLabel({ app, reference }) {
+function InputLabel({ app, reference = {} }) {
   const visRef = useRef();
   const [label, setLabel] = useState("");
   const getVisData = async () =>
@@ -37,10 +37,6 @@ function InputLabel({ app, reference }) {
     </div>
   );
 }
-
-InputLabel.defaultProps = {
-  reference: {},
-};
 
 InputLabel.propTypes = {
   app: PropTypes.object.isRequired,

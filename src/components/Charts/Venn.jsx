@@ -7,7 +7,7 @@ import FilterMessage from "../FilterMessage/FilterMessage";
 import ObjectError from "../ObjectError/ObjectError";
 import ObjectLoader from "../ObjectLoader/ObjectLoader";
 
-const Venn = ({ app, reference, style }) => {
+const Venn = ({ app = null, reference = {}, style = {} }) => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -143,11 +143,6 @@ const Venn = ({ app, reference, style }) => {
   );
 };
 
-Venn.defaultProps = {
-  app: null,
-  reference: {},
-  style: {},
-};
 Venn.propTypes = {
   app: PropTypes.object,
   reference: PropTypes.object,

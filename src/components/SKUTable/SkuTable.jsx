@@ -8,7 +8,7 @@ import ObjectError from "../ObjectError/ObjectError";
 import ObjectLoader from "../ObjectLoader/ObjectLoader";
 import TableElement from "./TableElement";
 
-const SkuTable = ({ app, config }) => {
+const SkuTable = ({ app = null, config = {} }) => {
   const refsToClose = useRef();
   const { header, body, filter } = config;
   const [isLoaded, setIsLoaded] = useState(false);
@@ -149,11 +149,6 @@ const SkuTable = ({ app, config }) => {
       )}
     </div>
   );
-};
-
-SkuTable.defaultProps = {
-  app: null,
-  config: {},
 };
 
 SkuTable.propTypes = {

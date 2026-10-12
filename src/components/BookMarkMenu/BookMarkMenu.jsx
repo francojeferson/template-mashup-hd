@@ -6,7 +6,7 @@ import {
 import BookMarkList from "./BookMarkList/BookMarkList";
 import CreateBookMarkContainer from "./CreateBookMarkContainer/CreateBookMarkContainer";
 
-function BookMarkMenu({ app }) {
+function BookMarkMenu({ app = null }) {
   const { bookMarkBarOpened, setBookMarkBarOpened } = useBookMarkBar();
   const { openCreateBookmark, setOpenCreateBookmark } =
     useCreateBookMarkContainer(false);
@@ -46,10 +46,6 @@ function BookMarkMenu({ app }) {
     </div>
   );
 }
-BookMarkMenu.defaultProps = {
-  app: null,
-};
-
 BookMarkMenu.propTypes = {
   app: PropTypes.object,
 };

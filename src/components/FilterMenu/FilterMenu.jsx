@@ -22,7 +22,12 @@ const ButtonWrapper = styled.div`
   }
 `;
 
-function FilterMenu({ app, filters, onDemand, config }) {
+function FilterMenu({
+  app = null,
+  filters = {},
+  onDemand = false,
+  config = {},
+}) {
   const { filterBarOpened, setFilterBarOpened } = useFilterBar();
   const { selections, setSelections } = useSelections();
   const { bookMarkBarOpened, setBookMarkBarOpened } = useBookMarkBar();
@@ -209,13 +214,6 @@ function FilterMenu({ app, filters, onDemand, config }) {
     </div>
   );
 }
-
-FilterMenu.defaultProps = {
-  app: null,
-  filters: {},
-  config: {},
-  onDemand: false,
-};
 
 FilterMenu.propTypes = {
   app: PropTypes.object,

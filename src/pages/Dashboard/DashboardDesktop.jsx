@@ -8,7 +8,7 @@ import LayoutCardsWrapper from "../../components/LayoutCardsWrapper/LayoutCardsW
 import NativeObject from "../../components/NativeObject/NativeObject";
 import { useQlik } from "../../context/Qlik";
 
-function DashboardDesktop({ app, config }) {
+function DashboardDesktop({ app = null, config = {} }) {
   const { setSwitchOnDemand } = useQlik();
   const { container } = config.dashboard;
 
@@ -232,11 +232,6 @@ function DashboardDesktop({ app, config }) {
     </div>
   );
 }
-
-DashboardDesktop.defaultProps = {
-  app: null,
-  config: {},
-};
 
 DashboardDesktop.propTypes = {
   app: PropTypes.object,

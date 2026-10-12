@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import { useEffect, useRef, useState } from "react";
 import utils from "../../QlikUtils";
 
-const Title = ({ app, reference }) => {
+const Title = ({ app = null, reference = {} }) => {
   const [qlikTitle, setQlikTitle] = useState("");
   const visRef = useRef();
   const mounted = useRef();
@@ -45,11 +45,6 @@ const Title = ({ app, reference }) => {
       {qlikTitle || reference.hardTitle}
     </div>
   );
-};
-
-Title.defaultProps = {
-  app: null,
-  reference: {},
 };
 
 Title.propTypes = {

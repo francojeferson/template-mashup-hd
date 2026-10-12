@@ -2,12 +2,12 @@ import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
 
 function CustomRadio({
-  onClick,
-  values,
-  initialActive,
-  containerStyle,
-  variable,
-  app,
+  onClick = () => {},
+  values = [],
+  initialActive = "",
+  containerStyle = {},
+  variable = "",
+  app = null,
 }) {
   const [active, setActive] = useState(initialActive || values[0].name);
 
@@ -52,15 +52,6 @@ function CustomRadio({
     </div>
   );
 }
-
-CustomRadio.defaultProps = {
-  onClick: () => {},
-  values: [],
-  initialActive: "",
-  containerStyle: {},
-  variable: "",
-  app: null,
-};
 
 CustomRadio.propTypes = {
   onClick: PropTypes.func,

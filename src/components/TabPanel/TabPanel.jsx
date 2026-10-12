@@ -1,7 +1,7 @@
 import { styled } from "@mui/material";
 import PropTypes from "prop-types";
 
-function TabPanel({ children, value, index, style }) {
+function TabPanel({ children, value = 0, index = 0, style = {} }) {
   const ChildrenWrapper = styled("div")({
     display: "flex",
     width: "100%",
@@ -25,12 +25,6 @@ function TabPanel({ children, value, index, style }) {
     </div>
   );
 }
-
-TabPanel.defaultProps = {
-  value: 0,
-  index: 0,
-  style: {},
-};
 
 TabPanel.propTypes = {
   children: PropTypes.node.isRequired,

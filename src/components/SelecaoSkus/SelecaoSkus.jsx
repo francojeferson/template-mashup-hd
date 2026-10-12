@@ -5,7 +5,7 @@ import ObjectError from "../ObjectError/ObjectError";
 import ObjectLoader from "../ObjectLoader/ObjectLoader";
 import TooltipInfo from "../TooltipInfo/TooltipInfo";
 
-function SelecaoSkus({ app, config }) {
+function SelecaoSkus({ app, config = {} }) {
   const { barchart, SKUs } = config;
   const { card } = SKUs;
   const [error, setError] = useState(null);
@@ -130,10 +130,6 @@ function SelecaoSkus({ app, config }) {
     </div>
   );
 }
-
-SelecaoSkus.defaultProps = {
-  config: {},
-};
 
 SelecaoSkus.propTypes = {
   app: PropTypes.object.isRequired,

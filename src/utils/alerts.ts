@@ -1,10 +1,15 @@
 import { FormHandles } from "@unform/core";
 import get from "lodash/get";
-import { ReactText, RefObject } from "react";
+import { RefObject } from "react";
+
 import { ToastOptions, toast } from "react-toastify";
 import * as Yup from "yup";
 import { ErrorCatch } from "../@types/ErrorCatch";
 import validateUnform from "./validate-unform";
+
+// `ReactText` saiu dos tipos do React 19; era o alias de `string | number`,
+// que e o que o toast devolve como id.
+type ReactText = string | number;
 
 const exibirToastSuccess = (mensagem: string): ReactText =>
   toast.success(mensagem);

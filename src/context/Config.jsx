@@ -4,7 +4,7 @@ import ConfigService from "../services/Config";
 
 const ConfigContext = createContext();
 
-const ConfigProvider = ({ children }) => {
+const ConfigProvider = ({ children = {} }) => {
   const [config, setConfig] = useState();
   useEffect(() => {
     if (!config) {
@@ -27,10 +27,6 @@ const useConfig = () => {
   }
 
   return context;
-};
-
-ConfigProvider.defaultProps = {
-  children: {},
 };
 
 ConfigProvider.propTypes = {

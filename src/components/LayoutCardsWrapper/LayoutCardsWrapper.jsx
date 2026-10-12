@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-function LayoutCardsWrapper({ children }) {
+function LayoutCardsWrapper({ children = null }) {
   return (
     <div
       style={{
@@ -16,10 +16,6 @@ function LayoutCardsWrapper({ children }) {
     </div>
   );
 }
-
-LayoutCardsWrapper.defaultProps = {
-  children: null,
-};
 
 LayoutCardsWrapper.propTypes = {
   children: PropTypes.any,

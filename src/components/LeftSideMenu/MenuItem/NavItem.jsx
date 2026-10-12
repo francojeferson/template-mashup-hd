@@ -3,7 +3,7 @@ import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { useLeftBar } from "../../../context/LeftBar";
 
-function NavItem({ icon, name, path, subpages }) {
+function NavItem({ icon = "", name = "", path = "", subpages = undefined }) {
   const { leftBarOpened } = useLeftBar();
   const [showSubPageItems, setShowSubPageItems] = useState(false);
   return (
@@ -59,13 +59,6 @@ function NavItem({ icon, name, path, subpages }) {
     </li>
   );
 }
-
-NavItem.defaultProps = {
-  icon: "",
-  name: "",
-  path: "",
-  subpages: undefined,
-};
 
 NavItem.propTypes = {
   icon: PropTypes.string,

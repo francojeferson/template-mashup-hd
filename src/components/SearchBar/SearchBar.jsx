@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { useEffect, useRef, useState } from "react";
 
-function SearchBar({ app }) {
+function SearchBar({ app = null }) {
   const [query, setQuery] = useState("");
   const [data, setData] = useState(null);
   const [suggestions, setSuggestions] = useState([]);
@@ -162,10 +162,6 @@ function SearchBar({ app }) {
     </div>
   );
 }
-
-SearchBar.defaultProps = {
-  app: null,
-};
 
 SearchBar.propTypes = {
   app: PropTypes.object,

@@ -3,7 +3,7 @@ import { createContext, useContext, useState } from "react";
 
 const BookMarkContext = createContext();
 
-function BookMarkProvider({ children }) {
+function BookMarkProvider({ children = {} }) {
   const [bookMarkBarOpened, setBookMarkBarOpened] = useState(false);
   const [openCreateBookmark, setOpenCreateBookmark] = useState(false);
 
@@ -37,10 +37,6 @@ function useCreateBookMarkContainer() {
 
   return context;
 }
-
-BookMarkProvider.defaultProps = {
-  children: {},
-};
 
 BookMarkProvider.propTypes = {
   children: PropTypes.object,

@@ -6,7 +6,7 @@ import utils from "../../QlikUtils";
 import { useLeftBar } from "../../context/LeftBar";
 import NavItem from "./MenuItem/NavItem";
 
-function LeftSideMenu({ app, config, logo }) {
+function LeftSideMenu({ app, config, logo = "" }) {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   const [dataAtualizacao, setDataAtualizacao] = useState("24/10/2023");
   const screenBreakpoint = 500;
@@ -135,10 +135,6 @@ function LeftSideMenu({ app, config, logo }) {
     </div>
   );
 }
-
-LeftSideMenu.defaultProps = {
-  logo: "",
-};
 
 LeftSideMenu.propTypes = {
   logo: PropTypes.string,

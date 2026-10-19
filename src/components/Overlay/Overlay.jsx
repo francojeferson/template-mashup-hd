@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-function Overlay({ children, onClick, backgroundColor }) {
+function Overlay({ children = null, onClick = null, backgroundColor = null }) {
   return (
     <div role="button" className="overlayWrapper">
       <div
@@ -16,12 +16,6 @@ function Overlay({ children, onClick, backgroundColor }) {
     </div>
   );
 }
-
-Overlay.defaultProps = {
-  children: null,
-  onClick: null,
-  backgroundColor: null,
-};
 
 Overlay.propTypes = {
   children: PropTypes.any,

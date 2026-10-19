@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-export default function FilterMessage({ message, absolute }) {
+export default function FilterMessage({ message = "", absolute = false }) {
   const style = absolute
     ? {
         position: "absolute",
@@ -19,11 +19,6 @@ export default function FilterMessage({ message, absolute }) {
     </div>
   );
 }
-
-FilterMessage.defaultProps = {
-  message: "",
-  absolute: false,
-};
 
 FilterMessage.propTypes = {
   message: PropTypes.string,

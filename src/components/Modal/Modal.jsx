@@ -7,16 +7,16 @@ import { useQlik } from "../../context/Qlik";
 import FilterMenuMobile from "../FilterMenu/FilterMenuMobile";
 
 function Modal({
-  show,
-  setShow,
-  title,
-  text,
-  children,
-  closeButton,
-  returnButton,
-  filterMenu,
-  app,
-  config,
+  show = false,
+  setShow = null,
+  title = "",
+  text = "",
+  children = null,
+  closeButton = false,
+  returnButton = false,
+  filterMenu = false,
+  app = null,
+  config = {},
 }) {
   const { filterBarModalOpened } = useModal();
   const { qlik } = useQlik();
@@ -67,19 +67,6 @@ function Modal({
     </ModalMui>
   );
 }
-
-Modal.defaultProps = {
-  app: null,
-  config: {},
-  title: "",
-  text: "",
-  children: null,
-  closeButton: false,
-  returnButton: false,
-  filterMenu: false,
-  show: false,
-  setShow: null,
-};
 
 Modal.propTypes = {
   title: PropTypes.string,

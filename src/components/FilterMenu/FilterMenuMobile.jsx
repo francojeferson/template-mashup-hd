@@ -9,7 +9,7 @@ import BookMarkMenu from "../BookMarkMenu/BookMarkMenu";
 import Overlay from "../Overlay/Overlay";
 import RightSideMenuModal from "../RightSideMenu/RightSideMenuModal";
 
-function FilterMenuMobile({ app, filters }) {
+function FilterMenuMobile({ app = null, filters = {} }) {
   const { filterBarModalOpened, setFilterBarModalOpened } = useModal();
 
   const { selections, setSelections } = useSelections();
@@ -140,11 +140,6 @@ function FilterMenuMobile({ app, filters }) {
     </div>
   );
 }
-
-FilterMenuMobile.defaultProps = {
-  app: null,
-  filters: {},
-};
 
 FilterMenuMobile.propTypes = {
   app: PropTypes.object,

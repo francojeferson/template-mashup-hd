@@ -6,7 +6,7 @@ import LayoutCardsWrapper from "../../components/LayoutCardsWrapper/LayoutCardsW
 import NativeObject from "../../components/NativeObject/NativeObject";
 import { useQlik } from "../../context/Qlik";
 
-function DetailDesktop({ app, config }) {
+function DetailDesktop({ app = null, config = {} }) {
   const { container } = config.detail;
   const { title, nativeObject } = container[0].cards[0];
   const { setSwitchOnDemand } = useQlik();
@@ -44,11 +44,6 @@ function DetailDesktop({ app, config }) {
     </div>
   );
 }
-
-DetailDesktop.defaultProps = {
-  app: null,
-  config: {},
-};
 
 DetailDesktop.propTypes = {
   app: PropTypes.object,

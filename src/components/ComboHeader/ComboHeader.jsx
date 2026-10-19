@@ -6,7 +6,14 @@ import LineIcon from "../../assets/icons/line-icon.svg?react";
 import Radio from "../Radio/Radio";
 import TooltipInfo from "../TooltipInfo/TooltipInfo";
 
-function ComboHeader({ app, reference, tooltip, legends, radio, classStyle }) {
+function ComboHeader({
+  app = null,
+  reference = {},
+  tooltip = "",
+  legends = [],
+  radio = null,
+  classStyle = null,
+}) {
   const [qlikTitle, setQlikTitle] = useState("");
   const [subTitle, setSubTitle] = useState("");
 
@@ -114,16 +121,6 @@ function ComboHeader({ app, reference, tooltip, legends, radio, classStyle }) {
     </div>
   );
 }
-
-ComboHeader.defaultProps = {
-  app: null,
-  reference: {},
-  tooltip: "",
-  legends: [],
-  radio: null,
-  classStyle: null,
-  field: {},
-};
 
 ComboHeader.propTypes = {
   app: PropTypes.object,

@@ -1,6 +1,12 @@
 import PropTypes from "prop-types";
 
-function Button({ children, className, icon, onClick, style }) {
+function Button({
+  children = "",
+  className = "",
+  icon = "",
+  onClick = null,
+  style = null,
+}) {
   return (
     <button
       onClick={onClick}
@@ -13,14 +19,6 @@ function Button({ children, className, icon, onClick, style }) {
     </button>
   );
 }
-
-Button.defaultProps = {
-  className: "",
-  children: "",
-  icon: "",
-  onClick: null,
-  style: null,
-};
 
 Button.propTypes = {
   className: PropTypes.string,

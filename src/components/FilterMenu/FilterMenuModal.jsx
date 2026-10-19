@@ -8,7 +8,7 @@ import NativeFilter from "../NativeFilter/NativeFilter";
 import Overlay from "../Overlay/Overlay";
 import RightSideMenuModal from "../RightSideMenu/RightSideMenuModal";
 
-function FilterMenuModal({ app, filters }) {
+function FilterMenuModal({ app = null, filters = {} }) {
   const { filterBarModalOpened, setFilterBarModalOpened } = useModal();
   const { selections, setSelections } = useSelections();
   const { bookMarkBarOpened, setBookMarkBarOpened } = useBookMarkBar();
@@ -148,11 +148,6 @@ function FilterMenuModal({ app, filters }) {
     </div>
   );
 }
-
-FilterMenuModal.defaultProps = {
-  app: null,
-  filters: {},
-};
 
 FilterMenuModal.propTypes = {
   app: PropTypes.object,

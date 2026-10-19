@@ -2,7 +2,7 @@ import { Tab, Tabs } from "@mui/material";
 import PropTypes from "prop-types";
 import { useHistory } from "react-router-dom";
 
-const MobileHeader = ({ tab }) => {
+const MobileHeader = ({ tab = 0 }) => {
   const tabValue = tab || 0;
   const history = useHistory();
   const handleclick = (path) => history.push(path);
@@ -31,10 +31,6 @@ const MobileHeader = ({ tab }) => {
       </Tabs>
     </div>
   );
-};
-
-MobileHeader.defaultProps = {
-  tab: 0,
 };
 
 MobileHeader.propTypes = {

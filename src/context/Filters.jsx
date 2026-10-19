@@ -3,7 +3,7 @@ import { createContext, useContext, useState } from "react";
 
 const FiltersContext = createContext();
 
-function FiltersProvider({ children }) {
+function FiltersProvider({ children = {} }) {
   const [currentPeriod, setCurrentPeriod] = useState("");
 
   return (
@@ -27,10 +27,6 @@ function useFilters() {
 
   return context;
 }
-
-FiltersProvider.defaultProps = {
-  children: {},
-};
 
 FiltersProvider.propTypes = {
   children: PropTypes.object,

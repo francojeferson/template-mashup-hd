@@ -9,7 +9,13 @@ import IconPiechart from "../../assets/icons/pie-chart.svg?react";
 import IconScatterchart from "../../assets/icons/scatter.svg?react";
 import IconTable from "../../assets/icons/table.svg?react";
 
-function ObjectLoader({ icon, color, height, width, className }) {
+function ObjectLoader({
+  icon = "table",
+  color = "red",
+  height = "20px",
+  width = "20px",
+  className = "",
+}) {
   const icons = {
     linechart: <IconLinechart fill={color} />,
     barchart: <IconBarchart fill={color} />,
@@ -32,14 +38,6 @@ function ObjectLoader({ icon, color, height, width, className }) {
     </div>
   );
 }
-
-ObjectLoader.defaultProps = {
-  icon: "table",
-  color: "red",
-  height: "20px",
-  width: "20px",
-  className: "",
-};
 
 ObjectLoader.propTypes = {
   icon: PropTypes.string,

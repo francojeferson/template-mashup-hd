@@ -8,18 +8,18 @@ import ObjectLoader from "../ObjectLoader/ObjectLoader";
 import appearance from "./Appearance";
 
 function WaterfallDataProps({
-  data,
-  measures,
-  labels,
-  firstBar,
-  lastBar,
-  options,
-  style,
-  reference,
-  onEvents,
-  autoDataZoom,
-  echarts,
-  group,
+  data = null,
+  measures = [],
+  labels = [],
+  firstBar = {},
+  lastBar = {},
+  options = appearance.waterfall(),
+  style = {},
+  reference = {},
+  onEvents = null,
+  autoDataZoom = false,
+  echarts = null,
+  group = null,
 }) {
   const [finalOptions, setFinalOptions] = useState(options);
   const [loading, setLoading] = useState(true);
@@ -186,21 +186,6 @@ function WaterfallDataProps({
     </div>
   );
 }
-
-WaterfallDataProps.defaultProps = {
-  data: null,
-  labels: [],
-  measures: [],
-  firstBar: {},
-  lastBar: {},
-  reference: {},
-  style: {},
-  options: appearance.waterfall(),
-  onEvents: null,
-  autoDataZoom: false,
-  group: null,
-  echarts: null,
-};
 
 WaterfallDataProps.propTypes = {
   data: PropTypes.array,

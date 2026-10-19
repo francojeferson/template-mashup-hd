@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import { useEffect, useRef, useState } from "react";
 import TooltipInfo from "../TooltipInfo/TooltipInfo";
 
-function PosterHeader({ app, reference }) {
+function PosterHeader({ app, reference = {} }) {
   const visRef = useRef();
   const mounted = useRef();
 
@@ -43,10 +43,6 @@ function PosterHeader({ app, reference }) {
     </div>
   );
 }
-
-PosterHeader.defaultProps = {
-  reference: {},
-};
 
 PosterHeader.propTypes = {
   app: PropTypes.object.isRequired,

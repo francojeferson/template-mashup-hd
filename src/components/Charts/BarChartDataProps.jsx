@@ -8,17 +8,17 @@ import ObjectLoader from "../ObjectLoader/ObjectLoader";
 import appearance from "./Appearance";
 
 function BarChartDataProps({
-  data,
-  measures,
-  labels,
-  waterfallConnected,
-  options,
-  style,
-  reference,
-  onEvents,
-  autoDataZoom,
-  echarts,
-  group,
+  data = null,
+  measures = [],
+  labels = [],
+  waterfallConnected = false,
+  options = appearance.barchart(),
+  style = {},
+  reference = {},
+  onEvents = null,
+  autoDataZoom = false,
+  echarts = null,
+  group = null,
 }) {
   const [finalOptions, setFinalOptions] = useState(options);
   const [loading, setLoading] = useState(true);
@@ -157,20 +157,6 @@ function BarChartDataProps({
     </div>
   );
 }
-
-BarChartDataProps.defaultProps = {
-  data: null,
-  labels: [],
-  measures: [],
-  reference: {},
-  waterfallConnected: false,
-  style: {},
-  options: appearance.barchart(),
-  onEvents: null,
-  autoDataZoom: false,
-  group: null,
-  echarts: null,
-};
 
 BarChartDataProps.propTypes = {
   data: PropTypes.array,

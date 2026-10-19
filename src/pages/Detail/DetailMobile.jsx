@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import Card from "../../components/Cards/Card";
 import NativeObject from "../../components/NativeObject/NativeObject";
 
-function DetailMobile({ app, config }) {
+function DetailMobile({ app = null, config = {} }) {
   const { container } = config.detail;
   const { title } = container[0].cards[0];
 
@@ -45,11 +45,6 @@ function DetailMobile({ app, config }) {
     </div>
   );
 }
-
-DetailMobile.defaultProps = {
-  app: null,
-  config: {},
-};
 
 DetailMobile.propTypes = {
   app: PropTypes.object,

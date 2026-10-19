@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import { useState } from "react";
 import { useCreateBookMarkContainer } from "../../../context/BookMarkContainer";
 
-function CreateBookMarkContainer({ app }) {
+function CreateBookMarkContainer({ app = null }) {
   const [title, seTitle] = useState(false);
   const [description, setDescription] = useState(false);
   const { setOpenCreateBookmark } = useCreateBookMarkContainer(false);
@@ -56,10 +56,6 @@ function CreateBookMarkContainer({ app }) {
     </div>
   );
 }
-CreateBookMarkContainer.defaultProps = {
-  app: null,
-};
-
 CreateBookMarkContainer.propTypes = {
   app: PropTypes.object,
 };

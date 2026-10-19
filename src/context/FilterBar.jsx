@@ -3,7 +3,7 @@ import { createContext, useContext, useState } from "react";
 
 const FilterBarContext = createContext();
 
-function FilterBarProvider({ children }) {
+function FilterBarProvider({ children = {} }) {
   const [filterBarOpened, setFilterBarOpened] = useState(false);
 
   return (
@@ -27,10 +27,6 @@ function useFilterBar() {
 
   return context;
 }
-
-FilterBarProvider.defaultProps = {
-  children: {},
-};
 
 FilterBarProvider.propTypes = {
   children: PropTypes.object,

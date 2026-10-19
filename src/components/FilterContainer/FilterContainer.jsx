@@ -47,7 +47,7 @@ const LoaderWrapper = styled("div")({
     maxHeight: "16px",
   },
 });
-function FilterContainer({ app, config, index }) {
+function FilterContainer({ app = null, config = {}, index = 0 }) {
   const [activeTab, setActiveTab] = useState(index);
   const [loadingExcel, setLoadingExcel] = useState(false);
 
@@ -184,12 +184,6 @@ function FilterContainer({ app, config, index }) {
 }
 
 export default FilterContainer;
-
-FilterContainer.defaultProps = {
-  app: null,
-  config: {},
-  index: 0,
-};
 
 FilterContainer.propTypes = {
   app: PropTypes.object,

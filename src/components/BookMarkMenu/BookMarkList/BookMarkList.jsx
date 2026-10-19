@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import Utils from "../../../QlikUtils";
 import EditFavoriteModal from "../EditFavoriteModal/EditFavoriteModal";
 
-function BookMarkList({ app }) {
+function BookMarkList({ app = null }) {
   const [config, setConfig] = useState({});
   const [bookMarkInfoOpened, setBookMarkInfoOpened] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
@@ -111,10 +111,6 @@ function BookMarkList({ app }) {
     </div>
   );
 }
-BookMarkList.defaultProps = {
-  app: null,
-};
-
 BookMarkList.propTypes = {
   app: PropTypes.object,
 };

@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
 
-function Radio({ app, field }) {
+function Radio({ app = null, field = {} }) {
   const { measure, defaultOption, options } = field;
   const [active, setActive] = useState(defaultOption);
 
@@ -46,11 +46,6 @@ function Radio({ app, field }) {
     </div>
   );
 }
-
-Radio.defaultProps = {
-  app: null,
-  field: {},
-};
 
 Radio.propTypes = {
   app: PropTypes.object,

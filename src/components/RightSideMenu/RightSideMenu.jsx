@@ -5,7 +5,13 @@ import { useFilterBar } from "../../context/FilterBar";
 import NativeFilter from "../NativeFilter/NativeFilter";
 import CurrentSelections from "./CurrentSelections/CurrentSelections";
 
-function RightSideMenu({ app, selections, backCount, forwardCount, filters }) {
+function RightSideMenu({
+  app = null,
+  selections = [],
+  backCount = 0,
+  forwardCount = 0,
+  filters = [],
+}) {
   const [contentTab, setContentTab] = useState(false);
   const [activeFilter, setActiveFilter] = useState(null);
   const [activeTab, setActiveTab] = useState("filters");
@@ -164,14 +170,6 @@ function RightSideMenu({ app, selections, backCount, forwardCount, filters }) {
     </div>
   );
 }
-
-RightSideMenu.defaultProps = {
-  app: null,
-  filters: [],
-  selections: [],
-  backCount: 0,
-  forwardCount: 0,
-};
 
 RightSideMenu.propTypes = {
   app: PropTypes.object,

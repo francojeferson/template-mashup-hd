@@ -1,7 +1,7 @@
 import axios, { Axios, AxiosRequestConfig, AxiosRequestHeaders } from "axios";
 import store from "../store";
 
-const URL_API = process.env.REACT_APP_URL_API;
+const URL_API = import.meta.env.REACT_APP_URL_API;
 
 const header = (sessionHash: string | null | undefined) => ({
   Accept: "application/json",

@@ -6,7 +6,7 @@ import { useHistory } from "react-router-dom";
 import { deleteState } from "../../store/local-storage";
 import { logForDev, setTokenSession } from "../../utils";
 
-const { REACT_APP_OWNER } = process.env;
+const { REACT_APP_OWNER } = import.meta.env;
 
 export interface Payload {
   name: string;

@@ -29,7 +29,7 @@ i18n
     fallbackLng: "pt_BR",
     backend: {
       loadPath: `${
-        process.env.NODE_ENV === "development"
+        import.meta.env.DEV
           ? `${window.location.origin}${prefix || "/"}`
           : `${window.location.origin}${prefix || "/"}${path ? path[0] : ""}`
       }locales/{{lng}}/{{ns}}.json`,

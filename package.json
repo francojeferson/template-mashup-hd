@@ -37,6 +37,15 @@
     "uuid": "14.0.2",
     "venn.js": "0.2.20"
   },
+  "overrides": {
+    "cookie": "^0.7.0",
+    "fmin": {
+      "rollup": "^2.80.0"
+    },
+    "venn.js": {
+      "d3-color": "^3.1.0"
+    }
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
